@@ -25,8 +25,12 @@ export default function VideoTestimonials() {
     <section className="video-lux" id="testimonials" ref={revealRef}>
       <div className="container">
         <div className="video-lux__header fade-up">
-          <span className="section-eyebrow">Client Perspectives</span>
-          <h2 className="video-lux__title">Living the Design</h2>
+          <span className="video-lux__eyebrow">On-screen walkthroughs</span>
+          <h2 className="video-lux__title">Step inside finished spaces</h2>
+          <p className="video-lux__subtitle">
+            Short clips that show scale, light, and materiality—ideal if you are visualizing how your own
+            rooms might feel after execution.
+          </p>
         </div>
 
         <div className="video-lux__grid">

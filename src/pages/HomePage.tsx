@@ -1,10 +1,17 @@
 import { useEffect } from 'react'
 import { useLocation } from 'react-router-dom'
 import Hero from '../components/Hero'
+import TrustBar from '../components/TrustBar'
+import ServicesShowcase from '../components/ServicesShowcase'
 import FourStepJourney from '../components/FourStepJourney'
+import WhyChoose from '../components/WhyChoose'
 import Gallery from '../components/Gallery'
+import ClientQuotes from '../components/ClientQuotes'
 import VideoTestimonials from '../components/VideoTestimonials'
 import InstagramReels from '../components/InstagramReels'
+import KnowledgeHub from '../components/KnowledgeHub'
+import FaqsSection from '../components/FaqsSection'
+import WideCta from '../components/WideCta'
 import TrustContact from '../components/TrustContact'
 import WhatsAppButton from '../components/WhatsAppButton'
 
@@ -24,14 +31,17 @@ export default function HomePage() {
   return (
     <>
       <Hero />
+      <TrustBar />
+      <ServicesShowcase />
       <FourStepJourney />
+      <WhyChoose />
       <Gallery />
+      <ClientQuotes />
       <VideoTestimonials />
-      <section className="instagram-block">
-        <div className="container">
-          <InstagramReels />
-        </div>
-      </section>
+      <InstagramReels />
+      <KnowledgeHub />
+      <FaqsSection />
+      <WideCta />
       <TrustContact />
       <WhatsAppButton />
     </>

@@ -1,27 +1,36 @@
-import { ExternalLink } from 'lucide-react'
+import { ExternalLink, Instagram } from 'lucide-react'
+import { useScrollReveal } from '../hooks/useScrollReveal'
 
 export default function InstagramReels() {
+  const revealRef = useScrollReveal()
+
   return (
-    <div className="instagram-section">
-      <div className="instagram-section__header">
-        <h3>Instagram Reels</h3>
-        <p>3D walkthroughs, VR previews & project updates</p>
+    <section className="instagram-lux" id="social" ref={revealRef}>
+      <div className="container">
+        <div className="instagram-lux__inner fade-up">
+          <div className="instagram-lux__visual" aria-hidden>
+            <div className="instagram-lux__orb" />
+            <Instagram size={48} strokeWidth={1} className="instagram-lux__logo" />
+          </div>
+          <div className="instagram-lux__copy">
+            <span className="instagram-lux__eyebrow">Social</span>
+            <h2 className="instagram-lux__title">Reels, walkthroughs & site energy</h2>
+            <p className="instagram-lux__text">
+              Follow along for 3D previews, VR teasers, material close-ups, and real project milestones.
+              Full profiles can&apos;t be embedded here—tap through to Instagram for the latest reels.
+            </p>
+            <a
+              href="https://instagram.com/domesticdial"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="instagram-lux__btn"
+            >
+              Open Instagram
+              <ExternalLink size={18} strokeWidth={1.5} aria-hidden />
+            </a>
+          </div>
+        </div>
       </div>
-      <div className="instagram-section__cta">
-        <p>
-          Instagram doesn&apos;t allow embedding full profiles. Open our Reels for the latest tech-forward
-          content.
-        </p>
-        <a
-          href="https://instagram.com/domesticdial"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="instagram-section__link"
-        >
-          Watch on Instagram
-          <ExternalLink size={18} />
-        </a>
-      </div>
-    </div>
+    </section>
   )
 }

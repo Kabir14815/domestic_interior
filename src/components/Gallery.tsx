@@ -13,6 +13,11 @@ const beforeAfterSlides = [
     after: 'https://images.unsplash.com/photo-1556912173-3bb406ef7e77?w=1000&q=80',
     label: 'Culinary Space',
   },
+  {
+    before: 'https://images.unsplash.com/photo-1600566752355-35792bedcfea?w=1000&q=80',
+    after: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1000&q=80',
+    label: 'Living & light',
+  },
 ]
 
 function getClientX(e: MouseEvent | TouchEvent): number {
@@ -68,9 +73,11 @@ export default function Gallery() {
     <section className="gallery-lux" id="gallery" ref={revealRef}>
       <div className="container">
         <div className="gallery-lux__header fade-up">
-          <span className="section-eyebrow">Transformations</span>
-          <h2 className="gallery-lux__title">The Reveal</h2>
-          <p className="gallery-lux__subtitle">Slide to witness the metamorphosis.</p>
+          <span className="gallery-lux__eyebrow">Before & after</span>
+          <h2 className="gallery-lux__title">See the shift—one frame at a time</h2>
+          <p className="gallery-lux__subtitle">
+            Drag the handle to compare raw spaces with finished interiors from our coordinated projects.
+          </p>
         </div>
 
         <div className="before-after fade-up stagger-1">
