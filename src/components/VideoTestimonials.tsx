@@ -1,22 +1,46 @@
+import { useEffect, useRef, useState } from 'react'
+import { portfolioReels } from '../data/portfolioReels'
 import { useScrollReveal } from '../hooks/useScrollReveal'
 
-const testimonials = [
-  {
-    title: 'Minimalist Kitchen Reveal',
-    poster: 'https://images.unsplash.com/photo-1556912173-3bb406ef7e77?w=800&q=80',
-    src: 'https://assets.mixkit.co/videos/preview/mixkit-modern-living-room-interior-49346-large.mp4',
-  },
-  {
-    title: 'Living Space Walkthrough',
-    poster: 'https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=800&q=80',
-    src: 'https://assets.mixkit.co/videos/preview/mixkit-view-of-the-empty-interior-of-a-house-under-construction-41258-large.mp4',
-  },
-  {
-    title: 'Finished Master Suite',
-    poster: 'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=800&q=80',
-    src: 'https://assets.mixkit.co/videos/preview/mixkit-modern-living-room-interior-49346-large.mp4',
-  },
-]
+function LazyRevealVideo({
+  src,
+  poster,
+  title,
+}: {
+  src: string
+  poster: string
+  title: string
+}) {
+  const wrapRef = useRef<HTMLDivElement>(null)
+  const [shouldLoad, setShouldLoad] = useState(false)
+
+  useEffect(() => {
+    const root = wrapRef.current
+    if (!root) return
+    const io = new IntersectionObserver(
+      ([e]) => {
+        if (e.isIntersecting) setShouldLoad(true)
+      },
+      { root: null, rootMargin: '160px 0px', threshold: 0.02 }
+    )
+    io.observe(root)
+    return () => io.disconnect()
+  }, [])
+
+  return (
+    <div ref={wrapRef} className="video-lux__wrap">
+      <video
+        className="video-lux__video"
+        src={shouldLoad ? src : undefined}
+        poster={poster}
+        controls
+        playsInline
+        preload={shouldLoad ? 'metadata' : 'none'}
+        aria-label={title}
+      />
+    </div>
+  )
+}
 
 export default function VideoTestimonials() {
   const revealRef = useScrollReveal()
@@ -28,29 +52,19 @@ export default function VideoTestimonials() {
           <span className="video-lux__eyebrow">On-screen walkthroughs</span>
           <h2 className="video-lux__title">Step inside finished spaces</h2>
           <p className="video-lux__subtitle">
-            Short clips that show scale, light, and materiality—ideal if you are visualizing how your own
-            rooms might feel after execution.
+            The same project films as our portfolio—short clips, loaded as you scroll so the page stays light. Use the
+            controls to play with sound.
           </p>
         </div>
 
         <div className="video-lux__grid">
-          {testimonials.map((item, i) => (
-            <figure 
-              key={item.title} 
+          {portfolioReels.map((item, i) => (
+            <figure
+              key={item.id}
               className="video-lux__card fade-up"
-              style={{ transitionDelay: `${i * 150}ms` }}
+              style={{ transitionDelay: `${Math.min(i, 4) * 120}ms` }}
             >
-              <div className="video-lux__wrap">
-                <video
-                  className="video-lux__video"
-                  poster={item.poster}
-                  controls
-                  playsInline
-                  preload="metadata"
-                >
-                  <source src={item.src} type="video/mp4" />
-                </video>
-              </div>
+              <LazyRevealVideo src={item.src} poster={item.poster} title={item.title} />
               <figcaption className="video-lux__caption">{item.title}</figcaption>
             </figure>
           ))}

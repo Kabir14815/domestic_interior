@@ -39,7 +39,7 @@ export default function Header() {
             Reveal
           </Link>
           <Link to="/our-work" onClick={close}>
-            Studio Gallery
+            Our work
           </Link>
           <Link to={sectionLink(pathname, 'knowledge')} onClick={close}>
             Knowledge Hub
@@ -86,7 +86,7 @@ export default function Header() {
               Reveal
             </Link>
             <Link to="/our-work" onClick={close}>
-              Studio Gallery
+              Our work
             </Link>
             <Link to={sectionLink(pathname, 'knowledge')} onClick={close}>
               Knowledge Hub
