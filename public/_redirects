@@ -1,0 +1,2 @@
+# SPA fallback — React Router (e.g. /our-work). Real files in /portfolio etc. are still served first.
+/*    /index.html   200
