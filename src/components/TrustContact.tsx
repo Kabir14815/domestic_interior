@@ -37,8 +37,6 @@ const partnerMjTraders = {
     'Opp. Rest House, Railway Road, Sampla',
     'Under Flyover, Kharkhoda Road, Sampla',
   ],
-  services: 'Plywood, hardware, furniture, and all kinds of interior & exterior solutions.',
-  noteHi: 'नोट: घर की सजावट का सारा सामान मिलता है।',
 } as const
 
 export default function TrustContact() {
@@ -111,10 +109,6 @@ export default function TrustContact() {
                   ))}
                 </ul>
               </div>
-              <p className="landing-contact__partner-services">{partnerMjTraders.services}</p>
-              <p className="landing-contact__partner-note-hi" lang="hi">
-                {partnerMjTraders.noteHi}
-              </p>
             </article>
           </div>
 

@@ -1251,21 +1251,6 @@ a {
   margin-top: 4px;
 }
 
-.landing-contact__partner-services {
-  margin: 0 0 10px;
-  font-size: 13px;
-  line-height: 1.55;
-  color: var(--color-text-light);
-}
-
-.landing-contact__partner-note-hi {
-  margin: 0;
-  font-size: 13px;
-  line-height: 1.55;
-  color: var(--color-text);
-  opacity: 0.92;
-}
-
 .landing-footer__partner {
   text-align: left;
 }
