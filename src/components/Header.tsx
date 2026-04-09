@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
-import { Home, Menu, X, Sparkles } from 'lucide-react'
+import { Menu, X, Sparkles } from 'lucide-react'
 
 function sectionLink(pathname: string, id: string) {
   return pathname === '/' ? `#${id}` : `/#${id}`
@@ -17,7 +17,13 @@ export default function Header() {
       <div className="site-header__inner site-header__inner--landing container">
         <Link to="/" className="site-header__brand" onClick={close}>
           <span className="site-header__brand-icon" aria-hidden>
-            <Home size={22} strokeWidth={1.5} />
+            <img
+              src="/domestic-dial-logo.png"
+              alt=""
+              width={44}
+              height={44}
+              decoding="async"
+            />
           </span>
           <span className="site-header__brand-text">
             <span className="site-header__brand-name">Domestic Dial</span>

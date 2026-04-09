@@ -1,5 +1,6 @@
 import { ArrowUpRight, Play } from 'lucide-react'
 import { useCallback, useEffect, useRef, useState } from 'react'
+import DomesticDialServicesSection from './DomesticDialServicesSection'
 import { portfolioReels } from '../data/portfolioReels'
 import { useScrollReveal } from '../hooks/useScrollReveal'
 
@@ -144,15 +145,7 @@ function GridCard({ item }: { item: Project }) {
   )
 }
 
-function ReelVideo({
-  src,
-  poster,
-  label,
-}: {
-  src: string
-  poster: string
-  label: string
-}) {
+function ReelVideo({ src, label }: { src: string; label: string }) {
   const wrapRef = useRef<HTMLDivElement>(null)
   const videoRef = useRef<HTMLVideoElement>(null)
   const wantPlayRef = useRef(false)
@@ -223,7 +216,6 @@ function ReelVideo({
           ref={videoRef}
           className="our-work-lux__reel-video"
           src={shouldLoad ? src : undefined}
-          poster={poster}
           muted
           loop
           playsInline
@@ -278,6 +270,14 @@ export default function OurWork() {
           </p>
         </header>
 
+        <DomesticDialServicesSection
+          id="our-work-services"
+          className="home-services--in-our-work"
+          eyebrow="What we offer"
+          title="Services we deliver"
+          intro="The same eight offerings as on our brochure—nothing extra, nothing missing."
+        />
+
         <article className="our-work-lux__featured fade-up stagger-1">
           <div className="our-work-lux__featured-visual reveal-clip">
             <div className="our-work-lux__featured-frame" aria-hidden />
@@ -315,7 +315,7 @@ export default function OurWork() {
           </div>
           <div className="our-work-lux__reel-scroller" role="list" aria-label="Project videos">
             {portfolioReels.map((item) => (
-              <ReelVideo key={item.id} src={item.src} poster={item.poster} label={item.title} />
+              <ReelVideo key={item.id} src={item.src} label={item.title} />
             ))}
           </div>
         </div>

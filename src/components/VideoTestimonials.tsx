@@ -2,15 +2,7 @@ import { useEffect, useRef, useState } from 'react'
 import { portfolioReels } from '../data/portfolioReels'
 import { useScrollReveal } from '../hooks/useScrollReveal'
 
-function LazyRevealVideo({
-  src,
-  poster,
-  title,
-}: {
-  src: string
-  poster: string
-  title: string
-}) {
+function LazyRevealVideo({ src, title }: { src: string; title: string }) {
   const wrapRef = useRef<HTMLDivElement>(null)
   const [shouldLoad, setShouldLoad] = useState(false)
 
@@ -32,7 +24,6 @@ function LazyRevealVideo({
       <video
         className="video-lux__video"
         src={shouldLoad ? src : undefined}
-        poster={poster}
         controls
         playsInline
         preload={shouldLoad ? 'metadata' : 'none'}
@@ -64,7 +55,7 @@ export default function VideoTestimonials() {
               className="video-lux__card fade-up"
               style={{ transitionDelay: `${Math.min(i, 4) * 120}ms` }}
             >
-              <LazyRevealVideo src={item.src} poster={item.poster} title={item.title} />
+              <LazyRevealVideo src={item.src} title={item.title} />
               <figcaption className="video-lux__caption">{item.title}</figcaption>
             </figure>
           ))}
