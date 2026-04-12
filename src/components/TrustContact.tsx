@@ -11,33 +11,50 @@ const offices = [
     ],
     phones: [{ display: '92550 45552', tel: '+919255045552' }],
   },
+] as const
+
+/** Supply partners — text only (no card image). */
+const partners = [
   {
-    id: 'gohana',
-    label: 'Gohana',
-    lines: ['Opp. Riya Nursery, Meham Fatak, Meham Road, Gohana — 131301'],
+    name: 'Jatin Furniture',
+    tagline: 'Furniture & interiors',
+    contactName: 'Sandeep Jangra & Rahul Jangra',
+    role: 'Partners',
     phones: [
-      { display: '89503 97626', tel: '+918950397626' },
-      { display: '83980 00670', tel: '+918398000670' },
+      { display: '89503 97626', tel: '+918950397626', label: 'Sandeep' },
+      { display: '83980 00670', tel: '+918398000670', label: 'Rahul' },
+    ],
+    regionLabel: 'Gohana',
+    addresses: ['Opp. Riya Nursery, Meham Fatak, Meham Road, Gohana — 131301'],
+  },
+  {
+    name: 'MJ TRADERS',
+    tagline: 'Build to endure',
+    established: '2022',
+    contactName: 'Somi Jangra',
+    role: 'Managing Director',
+    phones: [
+      { display: '90503 82756', tel: '+919050382756', label: 'Mobile' },
+      { display: '86890 30589', tel: '+918689030589', label: 'Office' },
+    ],
+    regionLabel: 'Sampla',
+    addresses: ['Opp. Rest House, Railway Road, Sampla, Haryana 124501'],
+  },
+  {
+    name: 'JANGRA & ASSOCIATE',
+    tagline: 'Associate services',
+    contactName: 'Office',
+    role: 'Contact',
+    phones: [
+      { display: '97281 51787', tel: '+919728151787', label: 'Mobile' },
+      { display: '89296 66398', tel: '+918929666398', label: 'Mobile' },
+    ],
+    regionLabel: 'Tosham',
+    addresses: [
+      'Shop no. 4, Sonu katiwal complex, opposite New tehsil, Tosham, Haryana 127040',
     ],
   },
 ] as const
-
-/** Supply partner — text only (no card image). */
-const partnerMjTraders = {
-  name: 'MJ TRADERS',
-  tagline: 'Build to endure',
-  established: '2022',
-  contactName: 'Somi Jangra',
-  role: 'Managing Director',
-  phones: [
-    { display: '90503 82756', tel: '+919050382756', label: 'Mobile' },
-    { display: '86890 30589', tel: '+918689030589', label: 'Office' },
-  ],
-  addresses: [
-    'Opp. Rest House, Railway Road, Sampla',
-    'Under Flyover, Kharkhoda Road, Sampla',
-  ],
-} as const
 
 export default function TrustContact() {
   const revealRef = useScrollReveal()
@@ -79,37 +96,49 @@ export default function TrustContact() {
             <p className="landing-contact__partners-lead">
               Trusted supply partners we recommend for materials, hardware, and fit-out support.
             </p>
-            <article className="landing-contact__partner-card">
-              <div className="landing-contact__partner-card-head">
-                <div className="landing-contact__partner-card-titles">
-                  <h3 className="landing-contact__partner-name">{partnerMjTraders.name}</h3>
-                  <p className="landing-contact__partner-tagline">
-                    {partnerMjTraders.tagline}
-                    <span className="landing-contact__partner-est"> · Est. {partnerMjTraders.established}</span>
+            <div className="landing-contact__partner-stack">
+              {partners.map((partner) => (
+                <article key={partner.name} className="landing-contact__partner-card">
+                  <div className="landing-contact__partner-card-head">
+                    <div className="landing-contact__partner-card-titles">
+                      <h3 className="landing-contact__partner-name">{partner.name}</h3>
+                      <p className="landing-contact__partner-tagline">
+                        {partner.tagline}
+                        {'established' in partner && partner.established ? (
+                          <span className="landing-contact__partner-est"> · Est. {partner.established}</span>
+                        ) : null}
+                      </p>
+                    </div>
+                  </div>
+                  <p className="landing-contact__partner-person">
+                    {partner.contactName}
+                    <span className="landing-contact__partner-role"> — {partner.role}</span>
                   </p>
-                </div>
-              </div>
-              <p className="landing-contact__partner-person">
-                {partnerMjTraders.contactName}
-                <span className="landing-contact__partner-role"> — {partnerMjTraders.role}</span>
-              </p>
-              <div className="landing-contact__partner-phones" aria-label="MJ Traders phone numbers">
-                {partnerMjTraders.phones.map((p) => (
-                  <a key={p.tel} href={`tel:${p.tel}`} className="landing-contact__partner-phone">
-                    <span className="landing-contact__partner-phone-label">{p.label}</span>
-                    {p.display}
-                  </a>
-                ))}
-              </div>
-              <div className="landing-contact__partner-addresses" aria-label="MJ Traders locations in Sampla">
-                <p className="landing-contact__partner-addr-label">Sampla</p>
-                <ul className="landing-contact__partner-addr-list">
-                  {partnerMjTraders.addresses.map((line) => (
-                    <li key={line}>{line}</li>
-                  ))}
-                </ul>
-              </div>
-            </article>
+                  <div
+                    className="landing-contact__partner-phones"
+                    aria-label={`${partner.name} phone numbers`}
+                  >
+                    {partner.phones.map((p) => (
+                      <a key={p.tel} href={`tel:${p.tel}`} className="landing-contact__partner-phone">
+                        <span className="landing-contact__partner-phone-label">{p.label}</span>
+                        {p.display}
+                      </a>
+                    ))}
+                  </div>
+                  <div
+                    className="landing-contact__partner-addresses"
+                    aria-label={`${partner.name} locations in ${partner.regionLabel}`}
+                  >
+                    <p className="landing-contact__partner-addr-label">{partner.regionLabel}</p>
+                    <ul className="landing-contact__partner-addr-list">
+                      {partner.addresses.map((line) => (
+                        <li key={line}>{line}</li>
+                      ))}
+                    </ul>
+                  </div>
+                </article>
+              ))}
+            </div>
           </div>
 
           <div className="landing-contact__actions">
@@ -144,32 +173,6 @@ export default function TrustContact() {
                   </li>
                 ))}
               </ul>
-            </div>
-            <div className="landing-footer__col landing-footer__col--wide">
-              <p className="landing-footer__col-title">Our partners</p>
-              <div className="landing-footer__partner">
-                <p className="landing-footer__partner-name">{partnerMjTraders.name}</p>
-                <p className="landing-footer__partner-meta">
-                  {partnerMjTraders.tagline} · Est. {partnerMjTraders.established}
-                </p>
-                <p className="landing-footer__partner-person">
-                  {partnerMjTraders.contactName}, {partnerMjTraders.role}
-                </p>
-                <ul className="landing-footer__list landing-footer__list--tight">
-                  {partnerMjTraders.addresses.map((line) => (
-                    <li key={line}>{line}</li>
-                  ))}
-                </ul>
-                <ul className="landing-footer__list landing-footer__list--phones">
-                  {partnerMjTraders.phones.map((p) => (
-                    <li key={p.tel}>
-                      <a href={`tel:${p.tel}`} className="landing-footer__link">
-                        {p.label}: {p.display}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </div>
             </div>
           </div>
           <p className="landing-footer__copy">

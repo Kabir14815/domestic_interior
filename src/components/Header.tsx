@@ -41,9 +41,6 @@ export default function Header() {
           <Link to={sectionLink(pathname, 'process')} onClick={close}>
             Our Process
           </Link>
-          <Link to={sectionLink(pathname, 'gallery')} onClick={close}>
-            Reveal
-          </Link>
           <Link to="/our-work" onClick={close}>
             Our work
           </Link>
@@ -87,9 +84,6 @@ export default function Header() {
             </Link>
             <Link to={sectionLink(pathname, 'process')} onClick={close}>
               Our Process
-            </Link>
-            <Link to={sectionLink(pathname, 'gallery')} onClick={close}>
-              Reveal
             </Link>
             <Link to="/our-work" onClick={close}>
               Our work

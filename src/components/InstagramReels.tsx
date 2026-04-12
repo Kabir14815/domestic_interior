@@ -20,7 +20,7 @@ export default function InstagramReels() {
               Full profiles can&apos;t be embedded here—tap through to Instagram for the latest reels.
             </p>
             <a
-              href="https://instagram.com/domesticdial"
+              href="https://www.instagram.com/domesticdial2021?utm_source=qr&igsh=OWN2cjdwbWV6c3Ry"
               target="_blank"
               rel="noopener noreferrer"
               className="instagram-lux__btn"

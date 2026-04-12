@@ -5,7 +5,6 @@ import TrustBar from '../components/TrustBar'
 import ServicesShowcase from '../components/ServicesShowcase'
 import FourStepJourney from '../components/FourStepJourney'
 import WhyChoose from '../components/WhyChoose'
-import Gallery from '../components/Gallery'
 import ClientQuotes from '../components/ClientQuotes'
 import VideoTestimonials from '../components/VideoTestimonials'
 import InstagramReels from '../components/InstagramReels'
@@ -29,13 +28,12 @@ export default function HomePage() {
   }, [hash, pathname])
 
   return (
-    <>
+    <main id="main-content" className="site-main">
       <Hero />
       <TrustBar />
       <ServicesShowcase />
       <FourStepJourney />
       <WhyChoose />
-      <Gallery />
       <ClientQuotes />
       <VideoTestimonials />
       <InstagramReels />
@@ -44,6 +42,6 @@ export default function HomePage() {
       <WideCta />
       <TrustContact />
       <WhatsAppButton />
-    </>
+    </main>
   )
 }
