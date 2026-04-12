@@ -174,37 +174,6 @@ export default function TrustContact() {
                 ))}
               </ul>
             </div>
-            <div className="landing-footer__col landing-footer__col--wide">
-              <p className="landing-footer__col-title">Our partners</p>
-              {partners.map((partner) => (
-                <div key={partner.name} className="landing-footer__partner">
-                  <p className="landing-footer__partner-name">{partner.name}</p>
-                  <p className="landing-footer__partner-meta">
-                    {partner.tagline}
-                    {'established' in partner && partner.established
-                      ? ` · Est. ${partner.established}`
-                      : ''}
-                  </p>
-                  <p className="landing-footer__partner-person">
-                    {partner.contactName}, {partner.role}
-                  </p>
-                  <ul className="landing-footer__list landing-footer__list--tight">
-                    {partner.addresses.map((line) => (
-                      <li key={line}>{line}</li>
-                    ))}
-                  </ul>
-                  <ul className="landing-footer__list landing-footer__list--phones">
-                    {partner.phones.map((p) => (
-                      <li key={p.tel}>
-                        <a href={`tel:${p.tel}`} className="landing-footer__link">
-                          {p.label}: {p.display}
-                        </a>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              ))}
-            </div>
           </div>
           <p className="landing-footer__copy">
             © {new Date().getFullYear()} Domestic Dial. All rights reserved.
