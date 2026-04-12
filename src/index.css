@@ -1153,11 +1153,24 @@ a {
   .landing-contact__partner-stack {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
+
+  /* Three partners: avoid a lone card stuck on the left with empty space */
+  .landing-contact__partner-card:nth-child(3):last-child {
+    grid-column: 1 / -1;
+    max-width: min(28rem, 100%);
+    justify-self: center;
+  }
 }
 
 @media (min-width: 1024px) {
   .landing-contact__partner-stack {
     grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .landing-contact__partner-card:nth-child(3):last-child {
+    grid-column: auto;
+    max-width: none;
+    justify-self: stretch;
   }
 }
 

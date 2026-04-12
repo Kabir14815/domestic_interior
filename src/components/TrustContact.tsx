@@ -18,7 +18,7 @@ const partners = [
   {
     name: 'Jatin Furniture',
     tagline: 'Furniture & interiors',
-    contactName: 'Sandeep Jangra & Rahul Jangra',
+    contactName: ' Rahul Jangra',
     role: 'Partners',
     phones: [
       { display: '89503 97626', tel: '+918950397626', label: 'Sandeep' },
@@ -29,10 +29,10 @@ const partners = [
   },
   {
     name: 'MJ TRADERS',
-    tagline: 'Build to endure',
+    tagline: 'Interior & Exterior Solution',
     established: '2022',
     contactName: 'Somi Jangra',
-    role: 'Managing Director',
+    role: 'Partner',
     phones: [
       { display: '90503 82756', tel: '+919050382756', label: 'Mobile' },
       { display: '86890 30589', tel: '+918689030589', label: 'Office' },
@@ -42,9 +42,9 @@ const partners = [
   },
   {
     name: 'JANGRA & ASSOCIATE',
-    tagline: 'Associate services',
-    contactName: 'Office',
-    role: 'Contact',
+    tagline: 'Interior & Exterior Solution',
+    contactName: 'Sandeep Jangra ',
+    role: 'Partner',
     phones: [
       { display: '97281 51787', tel: '+919728151787', label: 'Mobile' },
       { display: '89296 66398', tel: '+918929666398', label: 'Mobile' },
@@ -173,6 +173,37 @@ export default function TrustContact() {
                   </li>
                 ))}
               </ul>
+            </div>
+            <div className="landing-footer__col landing-footer__col--wide">
+              <p className="landing-footer__col-title">Our partners</p>
+              {partners.map((partner) => (
+                <div key={partner.name} className="landing-footer__partner">
+                  <p className="landing-footer__partner-name">{partner.name}</p>
+                  <p className="landing-footer__partner-meta">
+                    {partner.tagline}
+                    {'established' in partner && partner.established
+                      ? ` · Est. ${partner.established}`
+                      : ''}
+                  </p>
+                  <p className="landing-footer__partner-person">
+                    {partner.contactName}, {partner.role}
+                  </p>
+                  <ul className="landing-footer__list landing-footer__list--tight">
+                    {partner.addresses.map((line) => (
+                      <li key={line}>{line}</li>
+                    ))}
+                  </ul>
+                  <ul className="landing-footer__list landing-footer__list--phones">
+                    {partner.phones.map((p) => (
+                      <li key={p.tel}>
+                        <a href={`tel:${p.tel}`} className="landing-footer__link">
+                          {p.label}: {p.display}
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
             </div>
           </div>
           <p className="landing-footer__copy">
