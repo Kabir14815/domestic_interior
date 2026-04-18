@@ -40,7 +40,7 @@ export default function DomesticDialServicesSection({ id, className, eyebrow, ti
             const Icon = SERVICE_ICONS[s.id]
             return (
               <li key={s.id} className="home-services__item fade-up" style={{ transitionDelay: `${i * 45}ms` }}>
-                <Link to="/#contact" className="home-services__card">
+                <Link to={`/services/${s.id}`} className="home-services__card">
                   <div className="home-services__icon-wrap">
                     <Icon size={22} strokeWidth={1.5} aria-hidden className="home-services__lucide" />
                   </div>
