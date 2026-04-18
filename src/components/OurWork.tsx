@@ -1,146 +1,41 @@
 import { ArrowUpRight, Play } from 'lucide-react'
 import { useCallback, useEffect, useRef, useState } from 'react'
+import { Link } from 'react-router-dom'
 import DomesticDialServicesSection from './DomesticDialServicesSection'
+import { portfolioProjects } from '../data/portfolioProjects'
 import { portfolioReels } from '../data/portfolioReels'
 import { useScrollReveal } from '../hooks/useScrollReveal'
 
-/** Lighter PNG first for LCP; large elevation JPEG stays in the grid. */
-const projects = [
-  {
-    id: 'featured-lounge',
-    src: '/portfolio/images/render-lounge.png',
-    title: 'Lounge study',
-    category: 'Concept',
-    year: '2025',
-    location: 'New Delhi',
-    lead: 'Light, proportion, and a restrained palette—concept work that sets the tone for full execution.',
-  },
-  {
-    id: 'hero-elevation',
-    src: '/portfolio/images/hero-elevation.jpg',
-    title: 'Signature residence',
-    category: 'Residential',
-  },
-  {
-    id: 'render-dining',
-    src: '/portfolio/images/render-dining.png',
-    title: 'Dining light',
-    category: 'Concept',
-  },
-  {
-    id: 'render-foyer',
-    src: '/portfolio/images/render-foyer.png',
-    title: 'Arrival sequence',
-    category: 'Concept',
-  },
-  {
-    id: 'render-kitchen',
-    src: '/portfolio/images/render-kitchen.png',
-    title: 'Kitchen rhythm',
-    category: 'Joinery',
-  },
-  {
-    id: 'warm-01',
-    src: '/portfolio/images/project-warm-01.jpg',
-    title: 'Layered living',
-    category: 'Residential',
-  },
-  {
-    id: 'warm-02',
-    src: '/portfolio/images/project-warm-02.jpg',
-    title: 'Warm minimal',
-    category: 'Residential',
-  },
-  {
-    id: 'warm-03',
-    src: '/portfolio/images/project-warm-03.jpg',
-    title: 'Quiet detail',
-    category: 'Residential',
-  },
-  {
-    id: 'warm-04',
-    src: '/portfolio/images/project-warm-04.jpg',
-    title: 'Evening glow',
-    category: 'Residential',
-  },
-  {
-    id: 'detail-01',
-    src: '/portfolio/images/project-detail-01.jpg',
-    title: 'Craft & texture',
-    category: 'Residential',
-  },
-  {
-    id: 'detail-02',
-    src: '/portfolio/images/project-detail-02.jpg',
-    title: 'Spatial flow',
-    category: 'Residential',
-  },
-  {
-    id: 'detail-03',
-    src: '/portfolio/images/project-detail-03.jpg',
-    title: 'Tailored joinery',
-    category: 'Joinery',
-  },
-  {
-    id: 'detail-04',
-    src: '/portfolio/images/project-detail-04.jpg',
-    title: 'Light as material',
-    category: 'Residential',
-  },
-  {
-    id: 'classic-01',
-    src: '/portfolio/images/project-classic-01.jpg',
-    title: 'Timeless lines',
-    category: 'Residential',
-  },
-  {
-    id: 'recent-01',
-    src: '/portfolio/images/project-recent-01.jpg',
-    title: 'Refined palette',
-    category: 'Residential',
-  },
-  {
-    id: 'archive-01',
-    src: '/portfolio/images/project-archive-01.jpg',
-    title: 'Courtyard edge',
-    category: 'Residential',
-  },
-  {
-    id: 'archive-02',
-    src: '/portfolio/images/project-archive-02.jpg',
-    title: 'Garden room',
-    category: 'Residential',
-  },
-] as const
-
 const INITIAL_GRID = 9
 
-type Project = (typeof projects)[number]
+type Project = (typeof portfolioProjects)[number]
 
 function GridCard({ item }: { item: Project }) {
   return (
     <li className="our-work-lux__cell">
-      <figure className="our-work-lux__card">
-        <div className="our-work-lux__img-wrap">
-          <img
-            src={item.src}
-            alt={`${item.title} — ${item.category} interior project`}
-            className="our-work-lux__img"
-            loading="lazy"
-            decoding="async"
-            sizes="(max-width: 640px) 100vw, (max-width: 900px) 50vw, 33vw"
-          />
-          <div className="our-work-lux__shine" aria-hidden />
-          <figcaption className="our-work-lux__overlay">
-            <span className="our-work-lux__overlay-category">{item.category}</span>
-            <span className="our-work-lux__overlay-name">{item.title}</span>
-            <span className="our-work-lux__overlay-cta">
-              <span>View</span>
-              <ArrowUpRight size={16} strokeWidth={1.25} aria-hidden />
-            </span>
-          </figcaption>
-        </div>
-      </figure>
+      <Link to={`/our-work/${item.id}`} className="our-work-lux__card-link">
+        <figure className="our-work-lux__card">
+          <div className="our-work-lux__img-wrap">
+            <img
+              src={item.src}
+              alt={`${item.title} — ${item.category} interior project`}
+              className="our-work-lux__img"
+              loading="lazy"
+              decoding="async"
+              sizes="(max-width: 640px) 100vw, (max-width: 900px) 50vw, 33vw"
+            />
+            <div className="our-work-lux__shine" aria-hidden />
+            <figcaption className="our-work-lux__overlay">
+              <span className="our-work-lux__overlay-category">{item.category}</span>
+              <span className="our-work-lux__overlay-name">{item.title}</span>
+              <span className="our-work-lux__overlay-cta">
+                <span>View</span>
+                <ArrowUpRight size={16} strokeWidth={1.25} aria-hidden />
+              </span>
+            </figcaption>
+          </div>
+        </figure>
+      </Link>
     </li>
   )
 }
@@ -243,7 +138,7 @@ function ReelVideo({ src, label }: { src: string; label: string }) {
 
 export default function OurWork() {
   const revealRef = useScrollReveal()
-  const [featured, ...gridProjects] = projects
+  const [featured, ...gridProjects] = portfolioProjects
   const [showAllGrid, setShowAllGrid] = useState(false)
   const visibleGrid = showAllGrid ? gridProjects : gridProjects.slice(0, INITIAL_GRID)
   const hiddenCount = gridProjects.length - visibleGrid.length
@@ -278,7 +173,10 @@ export default function OurWork() {
           intro="The same eight offerings as on our brochure—nothing extra, nothing missing."
         />
 
-        <article className="our-work-lux__featured fade-up stagger-1">
+        <Link
+          to={`/our-work/${featured.id}`}
+          className="our-work-lux__featured our-work-lux__featured--link fade-up stagger-1"
+        >
           <div className="our-work-lux__featured-visual reveal-clip">
             <div className="our-work-lux__featured-frame" aria-hidden />
             <img
@@ -294,15 +192,13 @@ export default function OurWork() {
           <div className="our-work-lux__featured-aside">
             <span className="our-work-lux__featured-label">{featured.category}</span>
             <h2 className="our-work-lux__featured-title">{featured.title}</h2>
-            {'lead' in featured && featured.lead ? (
-              <p className="our-work-lux__featured-lead">{featured.lead}</p>
-            ) : null}
+            {featured.lead ? <p className="our-work-lux__featured-lead">{featured.lead}</p> : null}
             <p className="our-work-lux__featured-meta">
               {[featured.year, featured.location].filter(Boolean).join(' · ')}
             </p>
             <span className="our-work-lux__featured-accent" aria-hidden />
           </div>
-        </article>
+        </Link>
 
         <div className="our-work-lux__reel-block fade-up stagger-2">
           <div className="our-work-lux__reel-intro">

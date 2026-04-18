@@ -297,6 +297,30 @@ a {
   max-width: 52rem;
 }
 
+.project-detail__category {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  margin: 0 0 12px;
+}
+
+.project-detail__meta {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  margin: 14px 0 0;
+}
+
+.service-detail__hero-img.project-detail__hero-img {
+  aspect-ratio: auto;
+  min-height: clamp(280px, 58vh, 780px);
+  max-height: 85vh;
+}
+
 .service-detail__body {
   margin-bottom: clamp(28px, 4vw, 40px);
 }
@@ -2510,6 +2534,12 @@ a {
   margin-bottom: clamp(72px, 11vw, 120px);
 }
 
+a.our-work-lux__featured--link {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
 @media (max-width: 1024px) {
   .our-work-lux__featured {
     grid-template-columns: 1fr;
@@ -2544,7 +2574,7 @@ a {
 }
 
 @media (hover: hover) {
-  .our-work-lux__featured:hover .our-work-lux__featured-img {
+  .our-work-lux__featured--link:hover .our-work-lux__featured-img {
     transform: scale(1.03);
   }
 }
@@ -2869,6 +2899,20 @@ a {
   margin: 0;
 }
 
+.our-work-lux__card-link {
+  display: block;
+  height: 100%;
+  text-decoration: none;
+  color: inherit;
+  outline: none;
+  border-radius: 2px;
+}
+
+.our-work-lux__card-link:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 4px;
+}
+
 .our-work-lux__card {
   margin: 0;
 }
@@ -2906,11 +2950,11 @@ a {
 }
 
 @media (hover: hover) {
-  .our-work-lux__card:hover .our-work-lux__shine {
+  .our-work-lux__card-link:hover .our-work-lux__shine {
     opacity: 1;
   }
 
-  .our-work-lux__card:hover .our-work-lux__img {
+  .our-work-lux__card-link:hover .our-work-lux__img {
     transform: scale(1.06);
   }
 }
@@ -2967,7 +3011,7 @@ a {
 }
 
 @media (hover: hover) {
-  .our-work-lux__card:hover .our-work-lux__overlay-cta {
+  .our-work-lux__card-link:hover .our-work-lux__overlay-cta {
     opacity: 1;
     transform: translateY(0);
   }
@@ -2986,11 +3030,11 @@ a {
     transition: none;
   }
 
-  .our-work-lux__card:hover .our-work-lux__img {
+  .our-work-lux__card-link:hover .our-work-lux__img {
     transform: none;
   }
 
-  .our-work-lux__featured:hover .our-work-lux__featured-img {
+  .our-work-lux__featured--link:hover .our-work-lux__featured-img {
     transform: none;
   }
 

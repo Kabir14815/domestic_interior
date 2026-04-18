@@ -3,6 +3,7 @@ import Header from './components/Header'
 import HomePage from './pages/HomePage'
 import OurWorkPage from './pages/OurWorkPage'
 import ServiceDetailPage from './pages/ServiceDetailPage'
+import ProjectDetailPage from './pages/ProjectDetailPage'
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/our-work" element={<OurWorkPage />} />
+        <Route path="/our-work/:projectId" element={<ProjectDetailPage />} />
         <Route path="/services/:serviceId" element={<ServiceDetailPage />} />
       </Routes>
     </BrowserRouter>
