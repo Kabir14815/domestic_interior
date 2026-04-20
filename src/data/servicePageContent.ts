@@ -154,12 +154,12 @@ export const servicePageContent: Record<DomesticDialServiceId, ServicePageConten
     },
     galleryImages: [
       {
-        src: img(P.whiteFrames, 1200),
-        alt: 'Door opening with clear sightlines for screen or mesh integration',
+        src: '/services/mosquito-doors/gallery-balcony-pleated-mesh.png',
+        alt: 'Balcony sunroom with white-framed retractable pleated mosquito mesh on large glazing—partially open with city and greenery beyond',
       },
       {
-        src: img(P.facadeWindows, 1200),
-        alt: 'Large openings that need insect protection without blocking breeze',
+        src: '/services/mosquito-doors/gallery-pleated-screen.png',
+        alt: 'Pleated insect screen for a wide garden doorway—mesh stacked open and hand drawing the screen closed across the frame',
       },
     ],
     paragraphs: [
