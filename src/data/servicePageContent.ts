@@ -132,12 +132,12 @@ export const servicePageContent: Record<DomesticDialServiceId, ServicePageConten
     },
     galleryImages: [
       {
-        src: img(P.livingWarm, 1200),
-        alt: 'Daylight washing interior surfaces from above',
+        src: '/services/glass-skylight/gallery-atrium-dome.png',
+        alt: 'Multi-storey circular atrium under a large domed glass skylight with radial frame, daylight on the floor below',
       },
       {
-        src: img(P.modernHome, 1200),
-        alt: 'Ceiling plane and volume for skylight placement studies',
+        src: '/services/glass-skylight/gallery-living-dome.png',
+        alt: 'Open-plan living area beneath a circular glass dome skylight with geometric frame, marble floor, seating, and plants',
       },
     ],
     paragraphs: [
