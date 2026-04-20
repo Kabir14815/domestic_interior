@@ -198,12 +198,12 @@ export const servicePageContent: Record<DomesticDialServiceId, ServicePageConten
     },
     galleryImages: [
       {
-        src: img(P.livingSofa, 1200),
-        alt: 'Wall treatments behind seating — texture and sheen',
+        src: '/services/wall-decor-finishes/gallery-guest-wood-slats.png',
+        alt: 'Guest room with vertical timber slat feature wall, circular mirror, TV niche, and floor-to-ceiling glazing to courtyard',
       },
       {
-        src: img(P.glassOffice, 1200),
-        alt: 'Feature surfaces and contrast in a finished room',
+        src: '/services/wall-decor-finishes/gallery-dining-wpc.png',
+        alt: 'Dining area with marble table and vertical wood-and-metallic slat accent wall opening to balcony',
       },
     ],
     paragraphs: [
