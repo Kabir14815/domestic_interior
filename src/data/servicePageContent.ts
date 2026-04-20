@@ -30,7 +30,8 @@ export type ServiceImage = {
 export type ServicePageContent = {
   id: DomesticDialServiceId
   heroImage: ServiceImage
-  galleryImages: [ServiceImage, ServiceImage]
+  /** Omitted on some services (e.g. aluminium windows) to hide the two-up gallery */
+  galleryImages?: [ServiceImage, ServiceImage]
   paragraphs: string[]
 }
 
@@ -65,12 +66,12 @@ export const servicePageContent: Record<DomesticDialServiceId, ServicePageConten
     },
     galleryImages: [
       {
-        src: img(P.modernHome, 1200),
-        alt: 'Slim profiles and glass fields on a contemporary elevation',
+        src: '/services/aluminium-windows/gallery-bifold-beach.png',
+        alt: 'Black aluminium bi-fold glass doors opening to a bright tropical beach view',
       },
       {
-        src: img(P.architecture, 1200),
-        alt: 'Window rhythm and shadow lines on the exterior',
+        src: '/services/aluminium-windows/gallery-sliding-panels.png',
+        alt: 'Four-panel aluminium sliding glass doors with dark slim frames looking into a contemporary living room',
       },
     ],
     paragraphs: [
@@ -87,12 +88,12 @@ export const servicePageContent: Record<DomesticDialServiceId, ServicePageConten
     },
     galleryImages: [
       {
-        src: img(P.brightInterior, 1200),
-        alt: 'Energy-efficient glazing with clean sightlines indoors',
+        src: '/services/upvc-windows/gallery-kitchen-casement.png',
+        alt: 'White four-panel casement uPVC window with grilles above a farmhouse sink in a bright kitchen',
       },
       {
-        src: img(P.woodSlats, 1200),
-        alt: 'Window wall paired with joinery for a calm interior palette',
+        src: '/services/upvc-windows/gallery-sliding-garden.png',
+        alt: 'White uPVC sliding window partially open, overlooking a green garden',
       },
     ],
     paragraphs: [
@@ -109,12 +110,12 @@ export const servicePageContent: Record<DomesticDialServiceId, ServicePageConten
     },
     galleryImages: [
       {
-        src: img(P.openWorkspace, 1200),
-        alt: 'Open workspace with glass zones for acoustic control',
+        src: '/services/glass-partitions/gallery-decorative-bronze.png',
+        alt: 'Five-panel decorative glass partition with slim black frames, bronze-tinted glass, and clear stadium-shaped insets in a luxury interior',
       },
       {
-        src: img(P.ceilingLines, 1200),
-        alt: 'Tracks, head detail, and minimal joints in a linear plan',
+        src: '/services/glass-partitions/gallery-folding-garden.png',
+        alt: 'Floor-to-ceiling black-framed glass wall with folding panels opening to a garden beside a modern office area',
       },
     ],
     paragraphs: [

@@ -61,21 +61,23 @@ export default function ServiceDetailPage() {
           ))}
         </div>
 
-        <div className="service-detail__gallery fade-up" role="group" aria-label="Service gallery">
-          {detail.galleryImages.map((g) => (
-            <figure key={g.src} className="service-detail__gallery-item">
-              <img
-                className="service-detail__gallery-img"
-                src={g.src}
-                alt={g.alt}
-                width={1200}
-                height={800}
-                loading="lazy"
-                decoding="async"
-              />
-            </figure>
-          ))}
-        </div>
+        {detail.galleryImages ? (
+          <div className="service-detail__gallery fade-up" role="group" aria-label="Service gallery">
+            {detail.galleryImages.map((g) => (
+              <figure key={g.src} className="service-detail__gallery-item">
+                <img
+                  className="service-detail__gallery-img"
+                  src={g.src}
+                  alt={g.alt}
+                  width={1200}
+                  height={800}
+                  loading="lazy"
+                  decoding="async"
+                />
+              </figure>
+            ))}
+          </div>
+        ) : null}
 
         <footer className="service-detail__footer fade-up">
           <Link to="/#contact" className="btn-solid-gold service-detail__cta">
