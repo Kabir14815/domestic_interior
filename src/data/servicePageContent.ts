@@ -176,12 +176,12 @@ export const servicePageContent: Record<DomesticDialServiceId, ServicePageConten
     },
     galleryImages: [
       {
-        src: img(P.woodSlats, 1200),
-        alt: 'Vertical timber slats and grain direction for panelling',
+        src: '/services/wooden-work/gallery-living-turnkey.png',
+        alt: 'Luxury open-plan living with bespoke TV wall, gold and black joinery, marble accents, and floor-to-ceiling glazing',
       },
       {
-        src: img(P.architecture, 1200),
-        alt: 'Wood tones balanced with architecture and light',
+        src: '/services/wooden-work/gallery-modular-kitchen.png',
+        alt: 'L-shaped modular kitchen with black and champagne-gold cabinetry, island with wine cooler, and geometric backsplash',
       },
     ],
     paragraphs: [
