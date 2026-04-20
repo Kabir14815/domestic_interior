@@ -30,8 +30,8 @@ export type ServiceImage = {
 export type ServicePageContent = {
   id: DomesticDialServiceId
   heroImage: ServiceImage
-  /** Omitted on some services (e.g. aluminium windows) to hide the two-up gallery */
-  galleryImages?: [ServiceImage, ServiceImage]
+  /** Omitted on some services (e.g. aluminium windows) to hide the gallery */
+  galleryImages?: ServiceImage[]
   paragraphs: string[]
 }
 
@@ -204,6 +204,10 @@ export const servicePageContent: Record<DomesticDialServiceId, ServicePageConten
       {
         src: '/services/wall-decor-finishes/gallery-dining-wpc.png',
         alt: 'Dining area with marble table and vertical wood-and-metallic slat accent wall opening to balcony',
+      },
+      {
+        src: '/services/wall-decor-finishes/gallery-bedroom-geometric.png',
+        alt: 'Bedroom with geometric-patterned soft furnishings, soft wall tones, and balcony through full-height glazing',
       },
     ],
     paragraphs: [

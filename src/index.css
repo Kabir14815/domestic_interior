@@ -332,9 +332,24 @@ a {
   margin-bottom: clamp(40px, 6vw, 56px);
 }
 
+/* Center a lone third (or odd final) gallery shot on wide layouts */
+.service-detail__gallery:has(.service-detail__gallery-item:nth-child(3):last-child)
+  .service-detail__gallery-item:last-child {
+  grid-column: 1 / -1;
+  max-width: min(100%, 900px);
+  margin-inline: auto;
+}
+
 @media (max-width: 640px) {
   .service-detail__gallery {
     grid-template-columns: 1fr;
+  }
+
+  .service-detail__gallery:has(.service-detail__gallery-item:nth-child(3):last-child)
+    .service-detail__gallery-item:last-child {
+    grid-column: auto;
+    max-width: none;
+    margin-inline: 0;
   }
 }
 
