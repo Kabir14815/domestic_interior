@@ -1,12 +1,9 @@
-"""Regenerate public favicons for search and browsers (contrast + edge fix for Chrome)."""
+"""Regenerate public favicons from domestic-dial-logo.png (transparent circular disk)."""
 from __future__ import annotations
 
 import math
 import os
 from PIL import Image, ImageEnhance, ImageFilter
-
-# Fills square corners outside the round seal; match logo surround (pure black on current asset).
-_MAT = (0, 0, 0)
 
 ROOT = os.path.join(os.path.dirname(__file__), "..", "public")
 SRC = os.path.join(ROOT, "domestic-dial-logo.png")
@@ -35,13 +32,12 @@ def _darkest_row_in_band(img: Image.Image, y0: int, y1: int) -> int:
 
 
 def dampen_top_bottom_halo(img: Image.Image) -> Image.Image:
-    """Downscaling pulls bright gold into the top/bottom rows; Chrome then shows a white band."""
+    """Downscaling pulls bright gold into the top/bottom rows (inside the disk)."""
     w, h = img.size
     if h < 8:
         return img
     out = img.copy()
     px = out.load()
-    # One dark interior row (gold ring sits above/below this band at tiny sizes).
     y0, y1 = h // 4, (3 * h) // 4
     ref_y = _darkest_row_in_band(out, y0, y1 + 1)
     bands = list(range(0, min(3, h // 2))) + list(range(max(0, h - 3), h))
@@ -64,37 +60,29 @@ def dampen_top_bottom_halo(img: Image.Image) -> Image.Image:
     return out
 
 
-def circular_corner_matte(img: Image.Image, feather: float = 1.35) -> Image.Image:
-    """Outside the inscribed circle → solid brand mat (no light resample halo / white box)."""
+def circular_transparent_outside(img: Image.Image, feather: float = 1.35) -> Image.Image:
+    """Outside the inscribed circle → transparent (Instagram-style square asset)."""
     w, h = img.size
     cx, cy = (w - 1) * 0.5, (h - 1) * 0.5
     r0 = min(w, h) * 0.5 - 0.01
     r1 = max(0.5, r0 - feather)
     out = img.copy().convert("RGBA")
     px = out.load()
-    mr, mg, mb = _MAT
     for y in range(h):
         for x in range(w):
             d = math.hypot(x - cx, y - cy)
+            r, g, b, a = px[x, y]
             if d >= r0:
-                px[x, y] = (mr, mg, mb, 255)
+                px[x, y] = (r, g, b, 0)
             elif d > r1:
                 t = (d - r1) / (r0 - r1)
-                r, g, b, a = px[x, y]
-                px[x, y] = (
-                    int(r * (1 - t) + mr * t),
-                    int(g * (1 - t) + mg * t),
-                    int(b * (1 - t) + mb * t),
-                    a,
-                )
+                px[x, y] = (r, g, b, int(a * (1 - t)))
     return out
 
 
 def main() -> None:
     im = Image.open(SRC).convert("RGBA")
     w, h = im.size
-    # Full frame: keeps dark mat around the seal so gold never sits on row 0–1
-    # after downscale (avoids Chrome’s “white halo” on 16/32 tab icons).
     z = 1.0
     cw, ch = int(w * z), int(h * z)
     x0, y0 = (w - cw) // 2, (h - ch) // 2
@@ -122,9 +110,15 @@ def main() -> None:
         r = m.resize((size, size), Image.Resampling.LANCZOS)
         if size <= 48:
             r = dampen_top_bottom_halo(r.convert("RGBA"))
-        r = circular_corner_matte(r.convert("RGBA"))
+        r = circular_transparent_outside(r.convert("RGBA"))
         r.save(os.path.join(ROOT, name), optimize=True, compress_level=9)
         print("wrote", name)
+
+    # Common convention for crawlers / defaults
+    Image.open(os.path.join(ROOT, "favicon-192x192.png")).save(
+        os.path.join(ROOT, "favicon.png"), optimize=True, compress_level=9
+    )
+    print("wrote favicon.png (192x192)")
 
     f48 = Image.open(os.path.join(ROOT, "favicon-48x48.png")).convert("RGBA")
     f32 = Image.open(os.path.join(ROOT, "favicon-32x32.png")).convert("RGBA")
