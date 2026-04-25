@@ -11,21 +11,21 @@ SRC = os.path.join(ROOT, "domestic-dial-logo.png")
 def main() -> None:
     im = Image.open(SRC).convert("RGBA")
     w, h = im.size
-    z = 0.70
+    # ~0.92 keeps the dark mat at the square edges; tighter crops put the gold
+    # ring against the top row of pixels and it reads as a white halo in search.
+    z = 0.92
     cw, ch = int(w * z), int(h * z)
     x0, y0 = (w - cw) // 2, (h - ch) // 2
     base = im.crop((x0, y0, x0 + cw, y0 + ch))
 
     def enhance(img: Image.Image) -> Image.Image:
-        out = ImageEnhance.Contrast(img).enhance(1.32)
-        out = ImageEnhance.Brightness(out).enhance(1.10)
-        return ImageEnhance.Color(out).enhance(1.18)
+        out = ImageEnhance.Contrast(img).enhance(1.16)
+        out = ImageEnhance.Brightness(out).enhance(1.03)
+        return ImageEnhance.Color(out).enhance(1.08)
 
     m = base.resize((256, 256), Image.Resampling.LANCZOS)
     m = enhance(m)
-    m = m.filter(
-        ImageFilter.UnsharpMask(radius=0.4, percent=100, threshold=1)
-    )
+    m = m.filter(ImageFilter.UnsharpMask(radius=0.35, percent=45, threshold=2))
 
     sizes: list[tuple[int, str]] = [
         (512, "favicon-512x512.png"),
