@@ -20,8 +20,8 @@ export default function Header() {
             <img
               src="/domestic-dial-logo.png"
               alt=""
-              width={44}
-              height={44}
+              width={56}
+              height={56}
               decoding="async"
             />
           </span>
