@@ -1,8 +1,12 @@
 """Regenerate public favicons for search and browsers (contrast + edge fix for Chrome)."""
 from __future__ import annotations
 
+import math
 import os
 from PIL import Image, ImageEnhance, ImageFilter
+
+# Matches header brand icon; fills square corners outside the round seal (IG-style, no white box).
+_MAT = (26, 31, 37)
 
 ROOT = os.path.join(os.path.dirname(__file__), "..", "public")
 SRC = os.path.join(ROOT, "domestic-dial-logo.png")
@@ -60,6 +64,32 @@ def dampen_top_bottom_halo(img: Image.Image) -> Image.Image:
     return out
 
 
+def circular_corner_matte(img: Image.Image, feather: float = 1.35) -> Image.Image:
+    """Outside the inscribed circle → solid brand mat (no light resample halo / white box)."""
+    w, h = img.size
+    cx, cy = (w - 1) * 0.5, (h - 1) * 0.5
+    r0 = min(w, h) * 0.5 - 0.01
+    r1 = max(0.5, r0 - feather)
+    out = img.copy().convert("RGBA")
+    px = out.load()
+    mr, mg, mb = _MAT
+    for y in range(h):
+        for x in range(w):
+            d = math.hypot(x - cx, y - cy)
+            if d >= r0:
+                px[x, y] = (mr, mg, mb, 255)
+            elif d > r1:
+                t = (d - r1) / (r0 - r1)
+                r, g, b, a = px[x, y]
+                px[x, y] = (
+                    int(r * (1 - t) + mr * t),
+                    int(g * (1 - t) + mg * t),
+                    int(b * (1 - t) + mb * t),
+                    a,
+                )
+    return out
+
+
 def main() -> None:
     im = Image.open(SRC).convert("RGBA")
     w, h = im.size
@@ -92,6 +122,7 @@ def main() -> None:
         r = m.resize((size, size), Image.Resampling.LANCZOS)
         if size <= 48:
             r = dampen_top_bottom_halo(r.convert("RGBA"))
+        r = circular_corner_matte(r.convert("RGBA"))
         r.save(os.path.join(ROOT, name), optimize=True, compress_level=9)
         print("wrote", name)
 
