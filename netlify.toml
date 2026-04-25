@@ -2,6 +2,12 @@
   command = "npm run build"
   publish = "dist"
 
+# Favicons: avoid long-lived stale icons in Chrome after updates.
+[[headers]]
+  for = "/favicon*"
+  [headers.values]
+    Cache-Control = "public, max-age=3600, must-revalidate"
+
 # Client-side routes (BrowserRouter). Static assets under dist/ are served when they exist.
 [[redirects]]
   from = "/*"
