@@ -475,8 +475,8 @@ a {
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  /* Matches logo mat so no light fringe under circular mask */
-  background: #1a1f25;
+  /* Matches logo surround (black mat under circular mask) */
+  background: #000000;
   border: 1px solid rgba(166, 140, 91, 0.4);
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.12);
 }

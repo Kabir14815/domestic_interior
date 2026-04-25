@@ -5,8 +5,8 @@ import math
 import os
 from PIL import Image, ImageEnhance, ImageFilter
 
-# Matches header brand icon; fills square corners outside the round seal (IG-style, no white box).
-_MAT = (26, 31, 37)
+# Fills square corners outside the round seal; match logo surround (pure black on current asset).
+_MAT = (0, 0, 0)
 
 ROOT = os.path.join(os.path.dirname(__file__), "..", "public")
 SRC = os.path.join(ROOT, "domestic-dial-logo.png")
