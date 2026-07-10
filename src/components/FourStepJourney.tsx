@@ -8,6 +8,7 @@ import {
   KeyRound,
   Plane,
 } from 'lucide-react'
+import { Link } from 'react-router-dom'
 import { useScrollReveal } from '../hooks/useScrollReveal'
 
 const phases = [
@@ -61,7 +62,7 @@ const phases = [
     visualAlt: 'Professional move coordination',
     cta: 'Plan your move',
     ctaIcon: Plane,
-    href: '#contact',
+    href: '/services/packers-movers',
   },
 ] as const
 
@@ -101,10 +102,17 @@ export default function FourStepJourney() {
               <div className="landing-process__visual">
                 <img src={phase.visual} alt={phase.visualAlt} loading="lazy" decoding="async" />
               </div>
-              <a href={phase.href} className="landing-process__btn">
-                <phase.ctaIcon size={16} strokeWidth={1.5} aria-hidden />
-                {phase.cta}
-              </a>
+              {phase.href.startsWith('/') ? (
+                <Link to={phase.href} className="landing-process__btn">
+                  <phase.ctaIcon size={16} strokeWidth={1.5} aria-hidden />
+                  {phase.cta}
+                </Link>
+              ) : (
+                <a href={phase.href} className="landing-process__btn">
+                  <phase.ctaIcon size={16} strokeWidth={1.5} aria-hidden />
+                  {phase.cta}
+                </a>
+              )}
             </article>
           ))}
         </div>

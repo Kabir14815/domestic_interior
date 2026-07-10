@@ -1,4 +1,4 @@
-import { ArrowUpRight, AppWindow, Box, Columns2, DoorOpen, Hammer, Layers2, Sparkles, Sun } from 'lucide-react'
+import { ArrowUpRight, AppWindow, Box, Columns2, DoorOpen, Hammer, Layers2, Package, Sparkles, Sun } from 'lucide-react'
 import type { LucideIcon } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import { domesticDialServices, type DomesticDialServiceId } from '../data/domesticDialServices'
@@ -13,6 +13,7 @@ const SERVICE_ICONS: Record<DomesticDialServiceId, LucideIcon> = {
   'mosquito-doors': DoorOpen,
   'wooden-work': Hammer,
   'wall-decor-finishes': Sparkles,
+  'packers-movers': Package,
 }
 
 type Props = {

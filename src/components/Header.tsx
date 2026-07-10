@@ -16,17 +16,16 @@ export default function Header() {
     <header className="site-header site-header--landing">
       <div className="site-header__inner site-header__inner--landing container">
         <Link to="/" className="site-header__brand" onClick={close}>
-          <span className="site-header__brand-icon" aria-hidden>
+          <span className="site-header__brand-mark">
             <img
               src="/domestic-dial-logo.png"
-              alt=""
-              width={56}
-              height={56}
+              alt="Domestic Dial"
+              width={118}
+              height={88}
               decoding="async"
             />
           </span>
           <span className="site-header__brand-text">
-            <span className="site-header__brand-name">Domestic Dial</span>
             <span className="site-header__brand-tagline">complete project management partner</span>
           </span>
         </Link>

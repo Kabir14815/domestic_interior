@@ -42,6 +42,11 @@ export const domesticDialServices = [
     title: 'Wall decor & finishes',
     blurb: 'Textures, treatments, and final layers that complete the room.',
   },
+  {
+    id: 'packers-movers',
+    title: 'Packers & Movers',
+    blurb: 'Concierge packing, careful transit, and handover so move-in stays calm.',
+  },
 ] as const
 
 export type DomesticDialServiceId = (typeof domesticDialServices)[number]['id']

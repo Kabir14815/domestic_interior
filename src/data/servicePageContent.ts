@@ -216,6 +216,28 @@ export const servicePageContent: Record<DomesticDialServiceId, ServicePageConten
       'Touch-up kits and care notes are handed over so the finish survives move-in and future maintenance.',
     ],
   },
+  'packers-movers': {
+    id: 'packers-movers',
+    heroImage: {
+      src: '/services/packers-movers.png',
+      alt: 'Professional packing and moving coordination for a home relocation',
+    },
+    galleryImages: [
+      {
+        src: img(P.modernHome, 1200),
+        alt: 'Move-ready home exterior prepared for handover and transit',
+      },
+      {
+        src: img(P.livingSofa, 1200),
+        alt: 'Furnished living space staged for careful packing and relocation',
+      },
+    ],
+    paragraphs: [
+      'From inventory to labelling, our packing team protects furniture, art, and everyday essentials with materials matched to each item. Room-by-room plans keep unpacking predictable on the other side.',
+      'Transit is scheduled around your handover date with padded wrapping, secure loading, and tracked routes. Fragile and high-value pieces get dedicated handling so finishes and joinery arrive as they left.',
+      'On arrival we place cartons by zone, assemble priority furniture if needed, and clear debris so your new home feels ready—not chaotic. One partner from packing through keys keeps the move accountable.',
+    ],
+  },
 }
 
 export function getServicePageContent(id: string): ServicePageContent | undefined {

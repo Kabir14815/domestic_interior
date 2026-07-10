@@ -170,7 +170,7 @@ export default function OurWork() {
           className="home-services--in-our-work"
           eyebrow="What we offer"
           title="Services we deliver"
-          intro="The same eight offerings as on our brochure—nothing extra, nothing missing."
+          intro="The same nine offerings as on our brochure—nothing extra, nothing missing."
         />
 
         <Link
