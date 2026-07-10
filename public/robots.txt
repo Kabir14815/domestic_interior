@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://domesticdial.com/sitemap.xml

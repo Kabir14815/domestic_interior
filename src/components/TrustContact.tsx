@@ -65,8 +65,8 @@ export default function TrustContact() {
         <div className="landing-contact__panel fade-up">
           <h2 className="landing-contact__title">Book a consultation</h2>
           <p className="landing-contact__desc">
-            Tell us about your home goals. We’ll map the right mix of visualization, glazing, joinery, and
-            finishes—and reply with next steps.
+            Tell us about your home goals in Zirakpur, Chandigarh, Mohali, or Panchkula. We’ll map the right mix of
+            visualization, glazing, joinery, finishes, and move support—and reply with next steps.
           </p>
 
           <div className="landing-contact__locations" aria-label="Office locations">

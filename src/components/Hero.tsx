@@ -35,7 +35,8 @@ export default function Hero() {
             <span className="landing-hero__title-dark">Modern Living</span>
           </h1>
           <p className="landing-hero__subtitle">
-            Stop chasing 10 different contractors. Get everything your home needs under one roof.
+            Stop chasing 10 different contractors. Get everything your home needs under one roof—serving
+            Zirakpur, Chandigarh, Mohali &amp; Panchkula.
           </p>
           <Link to="/our-work" className="landing-hero__cta">
             Explore our work

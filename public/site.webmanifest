@@ -1,18 +1,21 @@
 {
   "name": "Domestic Dial",
   "short_name": "Domestic Dial",
+  "description": "Complete home project management in Zirakpur & Chandigarh Tricity—visualization, windows, glass, wooden work, finishes, and packers & movers.",
   "start_url": "/",
   "display": "browser",
-  "background_color": "#000000",
+  "lang": "en-IN",
+  "background_color": "#f4f2e9",
+  "theme_color": "#a68c5b",
   "icons": [
     {
-      "src": "/favicon-192x192.png?v=11",
+      "src": "/favicon-192x192.png?v=12",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "any"
     },
     {
-      "src": "/favicon-512x512.png?v=11",
+      "src": "/favicon-512x512.png?v=12",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any"

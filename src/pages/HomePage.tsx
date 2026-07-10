@@ -13,6 +13,9 @@ import FaqsSection from '../components/FaqsSection'
 import WideCta from '../components/WideCta'
 import TrustContact from '../components/TrustContact'
 import WhatsAppButton from '../components/WhatsAppButton'
+import Seo from '../components/Seo'
+import { homeFaqs } from '../data/homeFaqs'
+import { faqJsonLd, HOME_SEO, localBusinessJsonLd } from '../data/siteSeo'
 
 export default function HomePage() {
   const { hash, pathname } = useLocation()
@@ -29,6 +32,13 @@ export default function HomePage() {
 
   return (
     <main id="main-content" className="site-main">
+      <Seo
+        title={HOME_SEO.title}
+        description={HOME_SEO.description}
+        keywords={HOME_SEO.keywords}
+        path="/"
+        jsonLd={[localBusinessJsonLd(), faqJsonLd([...homeFaqs])]}
+      />
       <Hero />
       <TrustBar />
       <ServicesShowcase />

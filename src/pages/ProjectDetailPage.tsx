@@ -1,7 +1,9 @@
 import { Link, Navigate, useParams } from 'react-router-dom'
 import { ArrowLeft, Sparkles } from 'lucide-react'
 import { getPortfolioProject } from '../data/portfolioProjects'
+import Seo from '../components/Seo'
 import WhatsAppButton from '../components/WhatsAppButton'
+import { breadcrumbJsonLd, SITE_NAME } from '../data/siteSeo'
 import { useScrollReveal } from '../hooks/useScrollReveal'
 
 export default function ProjectDetailPage() {
@@ -14,9 +16,26 @@ export default function ProjectDetailPage() {
   }
 
   const metaLine = [project.year, project.location].filter(Boolean).join(' · ')
+  const title = `${project.title} | ${project.category} Project | ${SITE_NAME}`
+  const description =
+    project.lead ||
+    project.paragraphs[0]?.slice(0, 155) ||
+    `${project.title} — ${project.category} interior project by Domestic Dial.`
 
   return (
     <main className="page-service">
+      <Seo
+        title={title}
+        description={description}
+        path={`/our-work/${project.id}`}
+        image={project.src}
+        type="article"
+        jsonLd={breadcrumbJsonLd([
+          { name: 'Home', path: '/' },
+          { name: 'Our work', path: '/our-work' },
+          { name: project.title, path: `/our-work/${project.id}` },
+        ])}
+      />
       <div ref={revealRef} className="page-service__reveal">
         <article className="service-detail container">
           <nav className="service-detail__breadcrumb" aria-label="Breadcrumb">

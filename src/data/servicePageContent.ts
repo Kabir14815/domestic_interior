@@ -233,9 +233,9 @@ export const servicePageContent: Record<DomesticDialServiceId, ServicePageConten
       },
     ],
     paragraphs: [
-      'From inventory to labelling, our packing team protects furniture, art, and everyday essentials with materials matched to each item. Room-by-room plans keep unpacking predictable on the other side.',
-      'Transit is scheduled around your handover date with padded wrapping, secure loading, and tracked routes. Fragile and high-value pieces get dedicated handling so finishes and joinery arrive as they left.',
-      'On arrival we place cartons by zone, assemble priority furniture if needed, and clear debris so your new home feels ready—not chaotic. One partner from packing through keys keeps the move accountable.',
+      'From inventory to labelling across Zirakpur and the Chandigarh Tricity, our packing team protects furniture, art, and everyday essentials with materials matched to each item. Room-by-room plans keep unpacking predictable on the other side.',
+      'Transit is scheduled around your handover date with padded wrapping, secure loading, and tracked routes for local and intercity moves. Fragile and high-value pieces get dedicated handling so finishes and joinery arrive as they left.',
+      'On arrival in Chandigarh, Mohali, Panchkula, or beyond, we place cartons by zone, assemble priority furniture if needed, and clear debris so your new home feels ready—not chaotic. One partner from packing through keys keeps the move accountable.',
     ],
   },
 }
