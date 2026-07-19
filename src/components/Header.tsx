@@ -1,6 +1,7 @@
-import { useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
-import { Menu, X, Sparkles } from 'lucide-react'
+import { ChevronDown, Menu, X } from 'lucide-react'
+import { servicePillars } from '../data/servicePillars'
 
 function sectionLink(pathname: string, id: string) {
   return pathname === '/' ? `#${id}` : `/#${id}`
@@ -9,57 +10,104 @@ function sectionLink(pathname: string, id: string) {
 export default function Header() {
   const { pathname } = useLocation()
   const [open, setOpen] = useState(false)
+  const [servicesOpen, setServicesOpen] = useState(false)
+  const servicesRef = useRef<HTMLDivElement>(null)
 
-  const close = () => setOpen(false)
+  const close = () => {
+    setOpen(false)
+    setServicesOpen(false)
+  }
+
+  useEffect(() => {
+    if (!servicesOpen) return
+    const onDoc = (e: MouseEvent) => {
+      if (servicesRef.current && !servicesRef.current.contains(e.target as Node)) {
+        setServicesOpen(false)
+      }
+    }
+    document.addEventListener('mousedown', onDoc)
+    return () => document.removeEventListener('mousedown', onDoc)
+  }, [servicesOpen])
+
+  const headerClass = ['site-header', 'site-header--landing'].join(' ')
 
   return (
-    <header className="site-header site-header--landing">
+    <header className={headerClass}>
       <div className="site-header__inner site-header__inner--landing container">
         <Link to="/" className="site-header__brand" onClick={close}>
           <span className="site-header__brand-icon" aria-hidden>
-            <img
-              src="/domestic-dial-mark.png"
-              alt=""
-              width={48}
-              height={48}
-              decoding="async"
-            />
+            <img src="/domestic-dial-mark.png" alt="" width={44} height={44} decoding="async" />
           </span>
           <span className="site-header__brand-text">
             <span className="site-header__brand-name">Domestic Dial</span>
-            <span className="site-header__brand-tagline">Zirakpur · Chandigarh Tricity</span>
+            <span className="site-header__brand-tagline">Design to Relocation</span>
           </span>
         </Link>
 
         <nav className="site-header__nav site-header__nav--landing" aria-label="Main">
-          <Link to="/" onClick={close}>
-            Home
-          </Link>
-          <Link to={sectionLink(pathname, 'services')} onClick={close}>
-            Services
-          </Link>
-          <Link to={sectionLink(pathname, 'process')} onClick={close}>
-            Our Process
+          <Link to={sectionLink(pathname, 'about')} onClick={close}>
+            About
           </Link>
           <Link to="/our-work" onClick={close}>
-            Our work
+            Portfolio
           </Link>
-          <Link to={sectionLink(pathname, 'knowledge')} onClick={close}>
-            Knowledge Hub
+          <div className="site-header__dropdown" ref={servicesRef}>
+            <button
+              type="button"
+              className="site-header__dropdown-btn"
+              aria-expanded={servicesOpen}
+              aria-haspopup="true"
+              onClick={() => setServicesOpen((v) => !v)}
+            >
+              Services
+              <ChevronDown size={14} strokeWidth={2} aria-hidden className={servicesOpen ? 'is-open' : ''} />
+            </button>
+            {servicesOpen ? (
+              <div className="site-header__dropdown-menu" role="menu">
+                {servicePillars.map((p) =>
+                  p.externalUrl ? (
+                    <a
+                      key={p.id}
+                      href={p.externalUrl}
+                      className="site-header__dropdown-item"
+                      role="menuitem"
+                      onClick={close}
+                    >
+                      {p.title}
+                    </a>
+                  ) : (
+                    <Link
+                      key={p.id}
+                      to={`/services/category/${p.id}`}
+                      className="site-header__dropdown-item"
+                      role="menuitem"
+                      onClick={close}
+                    >
+                      {p.title}
+                    </Link>
+                  )
+                )}
+              </div>
+            ) : null}
+          </div>
+          <Link to={sectionLink(pathname, 'process')} onClick={close}>
+            Process
           </Link>
-          <Link to={sectionLink(pathname, 'faqs')} onClick={close}>
-            FAQs
+          <Link to="/our-work" onClick={close}>
+            Project Gallery
+          </Link>
+          <Link to={sectionLink(pathname, 'contact')} onClick={close}>
+            Contact
           </Link>
         </nav>
 
         <div className="site-header__actions">
           <Link
             to={sectionLink(pathname, 'contact')}
-            className="site-header__cta"
+            className="site-header__cta site-header__cta--consult"
             onClick={close}
           >
-            <Sparkles size={14} strokeWidth={2} aria-hidden />
-            Book consultation
+            Get Free Consultation
           </Link>
           <button
             type="button"
@@ -76,27 +124,40 @@ export default function Header() {
       {open ? (
         <div className="site-header__drawer" id="mobile-nav">
           <nav className="site-header__drawer-nav" aria-label="Mobile">
-            <Link to="/" onClick={close}>
-              Home
-            </Link>
-            <Link to={sectionLink(pathname, 'services')} onClick={close}>
-              Services
-            </Link>
-            <Link to={sectionLink(pathname, 'process')} onClick={close}>
-              Our Process
+            <Link to={sectionLink(pathname, 'about')} onClick={close}>
+              About
             </Link>
             <Link to="/our-work" onClick={close}>
-              Our work
+              Portfolio
             </Link>
-            <Link to={sectionLink(pathname, 'knowledge')} onClick={close}>
-              Knowledge Hub
+            <span className="site-header__drawer-label">Services</span>
+            {servicePillars.map((p) =>
+              p.externalUrl ? (
+                <a key={p.id} href={p.externalUrl} className="site-header__drawer-sub" onClick={close}>
+                  {p.title}
+                </a>
+              ) : (
+                <Link
+                  key={p.id}
+                  to={`/services/category/${p.id}`}
+                  className="site-header__drawer-sub"
+                  onClick={close}
+                >
+                  {p.title}
+                </Link>
+              )
+            )}
+            <Link to={sectionLink(pathname, 'process')} onClick={close}>
+              Process
             </Link>
-            <Link to={sectionLink(pathname, 'faqs')} onClick={close}>
-              FAQs
+            <Link to="/our-work" onClick={close}>
+              Project Gallery
+            </Link>
+            <Link to={sectionLink(pathname, 'contact')} onClick={close}>
+              Contact
             </Link>
             <Link to={sectionLink(pathname, 'contact')} className="site-header__cta site-header__cta--block" onClick={close}>
-              <Sparkles size={14} strokeWidth={2} aria-hidden />
-              Book consultation
+              Get Free Consultation
             </Link>
           </nav>
         </div>

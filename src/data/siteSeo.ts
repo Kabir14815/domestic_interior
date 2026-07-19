@@ -34,11 +34,11 @@ export const BUSINESS_ADDRESS = {
 } as const
 
 export const HOME_SEO = {
-  title: 'Domestic Dial | Interior Design, Windows, Packers & Movers in Zirakpur & Chandigarh',
+  title: 'Domestic Dial | Design to Relocation — Zirakpur & Chandigarh Tricity',
   description:
-    'Domestic Dial in Zirakpur serves Chandigarh Tricity with 3D visualization, aluminium & uPVC windows, glass partitions, wooden work, wall finishes, and packers & movers—under one roof. Call 92550 45552.',
+    'Premium turnkey solutions for luxury homes in Zirakpur & Chandigarh—design & visualization, interiors, engineered systems, shading, and relocation. Call 92550 45552.',
   keywords:
-    'Domestic Dial Zirakpur, interior design Chandigarh, aluminium windows Mohali, uPVC windows Panchkula, packers and movers Zirakpur, glass partitions Chandigarh, wooden work Tricity',
+    'Domestic Dial Zirakpur, interior design Chandigarh, 3D visualization, aluminium windows, packers and movers, pergola shading, turnkey relocation Tricity',
 }
 
 export type ServiceSeo = {
