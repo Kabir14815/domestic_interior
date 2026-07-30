@@ -1,12 +1,13 @@
-# Domestic Dial — Single-page website
+# Domestic Dial — Website
 
-Minimal, mobile-first React landing page for **Domestic Dial** (complete home project management).
+React site for **Domestic Dial** (design to relocation home services across Zirakpur, Chandigarh, Mohali & Panchkula).
 
 ## Stack
 
 - React 18 + TypeScript + Vite
+- React Router
 - [Lucide React](https://lucide.dev/) icons
-- DM Sans (Google Fonts)
+- Outfit + Cormorant Garamond (Google Fonts)
 
 ## Run locally
 
@@ -23,18 +24,21 @@ npm run build
 
 ## Customize
 
-- **Hero video**: Edit `src/components/Hero.tsx` — replace `src` / `poster` with your own assets.
-- **Before/after images**: Edit `beforeAfterSlides` in `src/components/Gallery.tsx`.
-- **Video testimonials**: Replace URLs in `src/components/VideoTestimonials.tsx` with real client clips.
-- **Instagram**: Update `@domesticdial` links in `src/components/InstagramReels.tsx` to your handle.
-- **WhatsApp**: Number is in `src/components/WhatsAppButton.tsx` (`919255045552` = India +91).
-- **Brand color**: Change `--color-accent` in `src/index.css`.
+- **Service pillars (homepage opener)**: `src/data/servicePillars.ts` + `src/components/ServicePillars.tsx`
+- **Specialist services grid**: `src/data/domesticDialServices.ts` + `src/components/ServicesShowcase.tsx`
+- **Shading Solutions**: redirects to [chhayashading.com](https://chhayashading.com/) via `externalUrl` on that pillar
+- **SEO / phone / WhatsApp**: `src/data/siteSeo.ts`
+- **Brand colors**: CSS variables in `src/index.css` (`--color-accent`, etc.)
+- **Video testimonials**: `src/components/VideoTestimonials.tsx`
+- **Instagram**: `src/components/InstagramReels.tsx`
 
-## Sections (Urban Company–style flow)
+## Homepage flow
 
-1. Fixed header + hero (video + CTAs)
-2. Four-step journey (Dream → Build → Protect → Move)
-3. Before/after slider + project carousel
-4. Video testimonials
-5. Instagram Reels CTA
-6. Why us + footer + floating WhatsApp
+1. Service pillars (5 categories)
+2. Contact bar
+3. About
+4. Specialist services grid (9 services)
+5. Four-step journey (Dream → Build → Protect → Move)
+6. Why Domestic Dial
+7. Client quotes, videos, Instagram, FAQs
+8. Contact / partners + floating WhatsApp
