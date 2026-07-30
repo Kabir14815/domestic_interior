@@ -3,7 +3,6 @@ import { useLocation } from 'react-router-dom'
 import { useScrollReveal } from '../hooks/useScrollReveal'
 import ServicePillars from '../components/ServicePillars'
 import ContactBar from '../components/ContactBar'
-import ServicesShowcase from '../components/ServicesShowcase'
 import FourStepJourney from '../components/FourStepJourney'
 import WhyChoose from '../components/WhyChoose'
 import ClientQuotes from '../components/ClientQuotes'
@@ -63,7 +62,6 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-      <ServicesShowcase />
       <FourStepJourney />
       <WhyChoose />
       <ClientQuotes />

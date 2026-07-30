@@ -25,7 +25,7 @@ npm run build
 ## Customize
 
 - **Service pillars (homepage opener)**: `src/data/servicePillars.ts` + `src/components/ServicePillars.tsx`
-- **Specialist services grid**: `src/data/domesticDialServices.ts` + `src/components/ServicesShowcase.tsx`
+- **Specialist services grid**: `src/data/domesticDialServices.ts` (shown on Our Work)
 - **Shading Solutions**: redirects to [chhayashading.com](https://chhayashading.com/) via `externalUrl` on that pillar
 - **SEO / phone / WhatsApp**: `src/data/siteSeo.ts`
 - **Brand colors**: CSS variables in `src/index.css` (`--color-accent`, etc.)
@@ -37,8 +37,9 @@ npm run build
 1. Service pillars (5 categories)
 2. Contact bar
 3. About
-4. Specialist services grid (9 services)
-5. Four-step journey (Dream → Build → Protect → Move)
-6. Why Domestic Dial
-7. Client quotes, videos, Instagram, FAQs
-8. Contact / partners + floating WhatsApp
+4. Four-step journey (Dream → Build → Protect → Move)
+5. Why Domestic Dial
+6. Client quotes, videos, Instagram, FAQs
+7. Contact / partners + floating WhatsApp
+
+Specialist services (9 cards) remain on the Our Work page.
