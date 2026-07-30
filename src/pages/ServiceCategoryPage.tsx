@@ -1,10 +1,75 @@
 import { Link, Navigate, useParams } from 'react-router-dom'
 import { ArrowLeft, ArrowRight, Sparkles } from 'lucide-react'
-import { getServicePillar } from '../data/servicePillars'
+import { getServicePillar, type ServicePillarItem } from '../data/servicePillars'
 import Seo from '../components/Seo'
 import WhatsAppButton from '../components/WhatsAppButton'
 import { breadcrumbJsonLd, SITE_NAME } from '../data/siteSeo'
 import { useScrollReveal } from '../hooks/useScrollReveal'
+
+function PillarItemContent({ item }: { item: ServicePillarItem }) {
+  const hasRichContent = Boolean(
+    item.tagline ||
+      item.highlight ||
+      item.steps?.length ||
+      item.offeringsPoints?.length ||
+      item.whyPoints?.length,
+  )
+
+  if (!hasRichContent) {
+    return <p className="category-detail__item-hi">{item.description}</p>
+  }
+
+  return (
+    <div className="category-detail__rich">
+      {item.tagline ? <p className="category-detail__tagline">{item.tagline}</p> : null}
+      {item.highlight ? <blockquote className="category-detail__quote">{item.highlight}</blockquote> : null}
+      {item.intro ? <p className="category-detail__intro">{item.intro}</p> : null}
+
+      {item.steps?.length ? (
+        <div className="category-detail__process">
+          {item.processTitle ? <h3 className="category-detail__section-title">{item.processTitle}</h3> : null}
+          <ol className="category-detail__steps">
+            {item.steps.map((step) => (
+              <li key={step.title} className="category-detail__step">
+                <h4 className="category-detail__step-title">{step.title}</h4>
+                <p className="category-detail__step-text">{step.description}</p>
+                {step.bullets?.length ? (
+                  <ul className="category-detail__bullets">
+                    {step.bullets.map((bullet) => (
+                      <li key={bullet}>{bullet}</li>
+                    ))}
+                  </ul>
+                ) : null}
+              </li>
+            ))}
+          </ol>
+        </div>
+      ) : null}
+
+      {item.offeringsPoints?.length ? (
+        <div className="category-detail__offerings">
+          {item.offeringsTitle ? <h3 className="category-detail__section-title">{item.offeringsTitle}</h3> : null}
+          <ul className="category-detail__why-list">
+            {item.offeringsPoints.map((point) => (
+              <li key={point}>{point}</li>
+            ))}
+          </ul>
+        </div>
+      ) : null}
+
+      {item.whyPoints?.length ? (
+        <div className="category-detail__why">
+          {item.whyTitle ? <h3 className="category-detail__section-title">{item.whyTitle}</h3> : null}
+          <ul className="category-detail__why-list">
+            {item.whyPoints.map((point) => (
+              <li key={point}>{point}</li>
+            ))}
+          </ul>
+        </div>
+      ) : null}
+    </div>
+  )
+}
 
 export default function ServiceCategoryPage() {
   const revealRef = useScrollReveal()
@@ -79,7 +144,7 @@ export default function ServiceCategoryPage() {
                     </Link>
                   ) : null}
                 </div>
-                <p className="category-detail__item-hi">{item.description}</p>
+                <PillarItemContent item={item} />
               </li>
             ))}
           </ul>

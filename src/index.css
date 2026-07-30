@@ -1593,6 +1593,10 @@ a {
   border: 1px solid rgba(166, 140, 91, 0.2);
 }
 
+.category-detail__item:has(.category-detail__rich) {
+  padding: clamp(24px, 3.5vw, 36px);
+}
+
 .category-detail__item-head {
   display: flex;
   flex-wrap: wrap;
@@ -1630,6 +1634,102 @@ a {
   font-size: 1rem;
   line-height: 1.75;
   color: var(--color-text-light);
+}
+
+.category-detail__rich {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(18px, 2.5vw, 28px);
+}
+
+.category-detail__tagline {
+  margin: 0;
+  font-family: var(--font-serif);
+  font-size: clamp(1.15rem, 2.2vw, 1.45rem);
+  font-weight: 500;
+  font-style: italic;
+  line-height: 1.35;
+  color: var(--color-accent);
+}
+
+.category-detail__quote {
+  margin: 0;
+  padding: 16px 18px;
+  border-left: 2px solid var(--color-accent);
+  background: rgba(176, 141, 79, 0.08);
+  font-family: var(--font-serif);
+  font-size: clamp(1.05rem, 2vw, 1.2rem);
+  font-style: italic;
+  line-height: 1.55;
+  color: var(--color-text);
+}
+
+.category-detail__intro {
+  margin: 0;
+  font-size: 1.02rem;
+  line-height: 1.75;
+  color: var(--color-text-light);
+}
+
+.category-detail__section-title {
+  margin: 0 0 14px;
+  font-family: var(--font-serif);
+  font-size: clamp(1.2rem, 2.4vw, 1.45rem);
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.category-detail__steps {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.category-detail__step {
+  padding: 16px 18px;
+  border-radius: 8px;
+  border: 1px solid rgba(166, 140, 91, 0.16);
+  background: rgba(250, 247, 240, 0.7);
+}
+
+.category-detail__step-title {
+  margin: 0 0 8px;
+  font-size: 0.98rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  color: var(--color-text);
+}
+
+.category-detail__step-text {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.65;
+  color: var(--color-text-light);
+}
+
+.category-detail__bullets {
+  margin: 10px 0 0;
+  padding-left: 1.15rem;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  color: var(--color-text-light);
+  font-size: 0.92rem;
+  line-height: 1.6;
+}
+
+.category-detail__why-list {
+  margin: 0;
+  padding-left: 1.15rem;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  color: var(--color-text-light);
+  font-size: 0.98rem;
+  line-height: 1.65;
 }
 
 /* Header on hero — light text */
