@@ -42,8 +42,8 @@ export const servicePillars: ServicePillar[] = [
     shortTitle: 'Design',
     cardLabel: 'Design & Visualization',
     blurb: 'Layouts, 3D renders, and material boards before work begins.',
-    image: 'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=800&q=85',
-    imageAlt: 'Luxury living room interior visualization',
+    image: '/services/design-visualization-hero.png',
+    imageAlt: 'Domestic Dial design visualization with outdoor shading, smart home systems, and integrated interiors',
     items: [
       {
         id: '2d-layouts-space-planning',
@@ -206,8 +206,8 @@ export const servicePillars: ServicePillar[] = [
     shortTitle: 'Interiors',
     cardLabel: 'Interiors & Craftsmanship',
     blurb: 'Bespoke woodwork, modular kitchens, and smart lighting.',
-    image: 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?auto=format&fit=crop&w=800&q=85',
-    imageAlt: 'Premium modular kitchen craftsmanship',
+    image: '/services/interiors-craftsmanship.jpg',
+    imageAlt: 'Domestic Dial interiors craftsmanship from 2D floor plans to 3D interior and exterior visualization',
     items: [
       {
         id: 'bespoke-modular-kitchens',
@@ -305,8 +305,8 @@ export const servicePillars: ServicePillar[] = [
     shortTitle: 'Systems',
     cardLabel: 'Engineered Systems',
     blurb: 'Windows, screens, glass partitions, and precision metalwork.',
-    image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=800&q=85',
-    imageAlt: 'Engineered glass office partition system',
+    image: '/services/engineered-systems.jpg',
+    imageAlt: 'Domestic Dial engineered systems with precision woodwork, paneling, and integrated cabinetry installation',
     items: [
       {
         id: 'upvc-aluminium-doors-windows',
@@ -390,8 +390,8 @@ export const servicePillars: ServicePillar[] = [
     cardLabel: 'Shading Solutions',
     blurb: 'Pergolas, tensile shades, and balcony blinds outdoors.',
     externalUrl: 'https://chhayashading.com/',
-    image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=85',
-    imageAlt: 'Outdoor pergola shading on a luxury terrace',
+    image: '/services/shading-solutions.jpg',
+    imageAlt: 'Domestic Dial shading and premium window systems for exterior terraces and luxury interiors',
     items: [
       {
         id: 'motorized-retractable-pergolas',
@@ -416,8 +416,8 @@ export const servicePillars: ServicePillar[] = [
     shortTitle: 'Relocation',
     cardLabel: 'Turnkey Relocation',
     blurb: 'From construction dust to keys in hand—clean, pack, move, and settle in without the chaos.',
-    image: 'https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=1600&q=85',
-    imageAlt: 'Move-in ready luxury home after turnkey relocation handover',
+    image: '/services/turnkey-relocation.jpg',
+    imageAlt: 'Domestic Dial turnkey relocation with deep cleaning and professional packing and moving',
     items: [
       {
         id: 'turnkey-project-management',
