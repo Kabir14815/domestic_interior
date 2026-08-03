@@ -5,6 +5,7 @@ import HomePage from './pages/HomePage'
 import OurWorkPage from './pages/OurWorkPage'
 import ServiceDetailPage from './pages/ServiceDetailPage'
 import ServiceCategoryPage from './pages/ServiceCategoryPage'
+import ServicePillarItemPage from './pages/ServicePillarItemPage'
 import ProjectDetailPage from './pages/ProjectDetailPage'
 
 function ExternalRedirect({ to }: { to: string }) {
@@ -26,6 +27,10 @@ function App() {
         <Route
           path="/services/category/shading-solutions"
           element={<ExternalRedirect to="https://chhayashading.com/" />}
+        />
+        <Route
+          path="/services/category/:categoryId/:itemId"
+          element={<ServicePillarItemPage />}
         />
         <Route path="/services/category/:categoryId" element={<ServiceCategoryPage />} />
         <Route path="/services/:serviceId" element={<ServiceDetailPage />} />

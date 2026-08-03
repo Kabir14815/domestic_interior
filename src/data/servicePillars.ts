@@ -7,10 +7,11 @@ export type ServicePillarStep = {
 }
 
 export type ServicePillarItem = {
+  id: string
   title: string
   description: string
   linkedServiceId?: DomesticDialServiceId
-  /** Optional long-form content shown on the category page */
+  /** Optional long-form content shown on the item detail page */
   tagline?: string
   highlight?: string
   intro?: string
@@ -45,6 +46,7 @@ export const servicePillars: ServicePillar[] = [
     imageAlt: 'Luxury living room interior visualization',
     items: [
       {
+        id: '2d-layouts-space-planning',
         title: '2D Layouts & Space Planning',
         description: 'Accurate, customized layouts designed to make the best use of every space.',
         tagline: 'The Foundation of Perfect Interiors',
@@ -91,6 +93,7 @@ export const servicePillars: ServicePillar[] = [
         ],
       },
       {
+        id: '3d-interior-exterior-renderings',
         title: '3D Interior & Exterior Renderings',
         description:
           'High-quality 3D visuals that show how your home or commercial space will look before work begins.',
@@ -142,6 +145,7 @@ export const servicePillars: ServicePillar[] = [
         ],
       },
       {
+        id: 'material-selection-moodboards',
         title: 'Material Selection & Moodboards',
         description:
           'A complete visual guide to wood, finishes, fabrication metals, fabrics, and colour combinations.',
@@ -206,6 +210,7 @@ export const servicePillars: ServicePillar[] = [
     imageAlt: 'Premium modular kitchen craftsmanship',
     items: [
       {
+        id: 'bespoke-modular-kitchens',
         title: 'Bespoke Modular Kitchens (Woodwork & Aluminium)',
         description:
           'Waterproof aluminium and premium woodwork kitchens with precision hardware and smart storage.',
@@ -246,6 +251,7 @@ export const servicePillars: ServicePillar[] = [
         ],
       },
       {
+        id: 'luxury-wardrobes-custom-closets',
         title: 'Luxury Wardrobes & Custom Closets',
         description:
           'Floor-to-ceiling wardrobes, walk-in closets, and motion-sensor cabinet lighting.',
@@ -261,6 +267,7 @@ export const servicePillars: ServicePillar[] = [
         ],
       },
       {
+        id: 'false-ceiling-architectural-lighting',
         title: 'False Ceiling & Architectural Lighting',
         description:
           'Gypsum ceilings, magnetic tracks, COB lighting, and architectural wall paneling.',
@@ -276,6 +283,7 @@ export const servicePillars: ServicePillar[] = [
         ],
       },
       {
+        id: 'turnkey-civil-modifications',
         title: 'Turnkey Civil Modifications & Renovations',
         description:
           'Wall modifications, space expansions, tiling, and surface laying managed end to end.',
@@ -301,6 +309,7 @@ export const servicePillars: ServicePillar[] = [
     imageAlt: 'Engineered glass office partition system',
     items: [
       {
+        id: 'upvc-aluminium-doors-windows',
         title: 'UPVC & Aluminium Doors & Windows',
         description: 'High-end sliding windows and sound-insulated glazing systems.',
         linkedServiceId: 'aluminium-windows',
@@ -314,6 +323,7 @@ export const servicePillars: ServicePillar[] = [
         ],
       },
       {
+        id: 'foldable-mosquito-screens',
         title: 'Foldable Mosquito Screens',
         description: 'Premium mosquito screens for sliding and custom-made doors and windows.',
         linkedServiceId: 'mosquito-doors',
@@ -327,6 +337,7 @@ export const servicePillars: ServicePillar[] = [
         ],
       },
       {
+        id: 'foldable-honeycomb-partitions',
         title: 'Foldable Honeycomb Partitions',
         description:
           'Sleek, modern honeycomb (plissé) collapsible systems that divide spaces intelligently.',
@@ -341,6 +352,7 @@ export const servicePillars: ServicePillar[] = [
         ],
       },
       {
+        id: 'architectural-glass-partitions',
         title: 'Architectural Glass Partitions',
         description:
           'Toughened-glass solutions for shower cubicles, office cabins, balconies, and interior partitions.',
@@ -355,6 +367,7 @@ export const servicePillars: ServicePillar[] = [
         ],
       },
       {
+        id: 'premium-ms-ss-railings',
         title: 'Premium MS & SS Railings',
         description:
           'Premium mild-steel and stainless-steel railings with precision laser-cut designs.',
@@ -381,14 +394,17 @@ export const servicePillars: ServicePillar[] = [
     imageAlt: 'Outdoor pergola shading on a luxury terrace',
     items: [
       {
+        id: 'motorized-retractable-pergolas',
         title: 'Motorized & Retractable Pergolas',
         description: 'Remote-controlled aluminium pergolas and retractable roof systems.',
       },
       {
+        id: 'tensile-structures-gazebos',
         title: 'Tensile Structures & Gazebos',
         description: 'Designer tensile shades for rooftops, cafés, gardens, and villa lawns.',
       },
       {
+        id: 'awnings-vertical-balcony-blinds',
         title: 'Awnings & Vertical Balcony Blinds',
         description: 'Custom retractable shades and outdoor blinds for protection from sun and rain.',
       },
@@ -399,11 +415,12 @@ export const servicePillars: ServicePillar[] = [
     title: 'Turnkey Relocation',
     shortTitle: 'Relocation',
     cardLabel: 'Turnkey Relocation',
-    blurb: 'Pack, move, deep-clean, and hand over the keys.',
-    image: 'https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=800&q=85',
-    imageAlt: 'Premium home ready for turnkey relocation handover',
+    blurb: 'From construction dust to keys in hand—clean, pack, move, and settle in without the chaos.',
+    image: 'https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=1600&q=85',
+    imageAlt: 'Move-in ready luxury home after turnkey relocation handover',
     items: [
       {
+        id: 'turnkey-project-management',
         title: 'Turnkey Project Management',
         description: 'Complete, hassle-free project management covering materials, labour, and execution.',
         tagline: 'One accountable partner from plan to handover',
@@ -417,6 +434,7 @@ export const servicePillars: ServicePillar[] = [
         ],
       },
       {
+        id: 'seamless-relocation-handover',
         title: 'Seamless Relocation & Handover',
         description:
           'Post-construction cleaning, asset packing, safe shifting, and direct key handover.',
@@ -476,4 +494,15 @@ export type ServicePillarId = (typeof servicePillars)[number]['id']
 
 export function getServicePillar(id: string): ServicePillar | undefined {
   return servicePillars.find((p) => p.id === id)
+}
+
+export function getServicePillarItem(
+  categoryId: string,
+  itemId: string,
+): { pillar: ServicePillar; item: ServicePillarItem } | undefined {
+  const pillar = getServicePillar(categoryId)
+  if (!pillar) return undefined
+  const item = pillar.items.find((i) => i.id === itemId)
+  if (!item) return undefined
+  return { pillar, item }
 }
