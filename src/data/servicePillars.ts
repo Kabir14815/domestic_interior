@@ -42,8 +42,8 @@ export const servicePillars: ServicePillar[] = [
     shortTitle: 'Design',
     cardLabel: 'Design & Visualization',
     blurb: 'Layouts, 3D renders, and material boards before work begins.',
-    image: '/services/design-visualization-hero.png',
-    imageAlt: 'Domestic Dial design visualization with outdoor shading, smart home systems, and integrated interiors',
+    image: '/services/interiors-craftsmanship.jpg?v=swap1',
+    imageAlt: 'Domestic Dial design visualization from 2D floor plans to 3D interior and exterior renders',
     items: [
       {
         id: '2d-layouts-space-planning',
@@ -206,8 +206,8 @@ export const servicePillars: ServicePillar[] = [
     shortTitle: 'Interiors',
     cardLabel: 'Interiors & Craftsmanship',
     blurb: 'Bespoke woodwork, modular kitchens, and smart lighting.',
-    image: '/services/interiors-craftsmanship.jpg',
-    imageAlt: 'Domestic Dial interiors craftsmanship from 2D floor plans to 3D interior and exterior visualization',
+    image: '/services/engineered-systems.jpg?v=swap1',
+    imageAlt: 'Domestic Dial interiors craftsmanship with precision woodwork, paneling, and cabinetry installation',
     items: [
       {
         id: 'bespoke-modular-kitchens',
@@ -305,8 +305,8 @@ export const servicePillars: ServicePillar[] = [
     shortTitle: 'Systems',
     cardLabel: 'Engineered Systems',
     blurb: 'Windows, screens, glass partitions, and precision metalwork.',
-    image: '/services/engineered-systems.jpg',
-    imageAlt: 'Domestic Dial engineered systems with precision woodwork, paneling, and integrated cabinetry installation',
+    image: '/services/shading-solutions.jpg?v=swap1',
+    imageAlt: 'Domestic Dial engineered systems with premium window, glass, and facade solutions',
     items: [
       {
         id: 'upvc-aluminium-doors-windows',
@@ -390,8 +390,8 @@ export const servicePillars: ServicePillar[] = [
     cardLabel: 'Shading Solutions',
     blurb: 'Pergolas, tensile shades, and balcony blinds outdoors.',
     externalUrl: 'https://chhayashading.com/',
-    image: '/services/shading-solutions.jpg',
-    imageAlt: 'Domestic Dial shading and premium window systems for exterior terraces and luxury interiors',
+    image: '/services/design-visualization-hero.png?v=swap1',
+    imageAlt: 'Domestic Dial shading solutions with outdoor living systems and smart home integration',
     items: [
       {
         id: 'motorized-retractable-pergolas',
