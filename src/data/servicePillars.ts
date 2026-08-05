@@ -11,6 +11,9 @@ export type ServicePillarItem = {
   title: string
   description: string
   linkedServiceId?: DomesticDialServiceId
+  /** Optional hero image for the item detail page */
+  image?: string
+  imageAlt?: string
   /** Optional long-form content shown on the item detail page */
   tagline?: string
   highlight?: string
@@ -49,6 +52,8 @@ export const servicePillars: ServicePillar[] = [
         id: '2d-layouts-space-planning',
         title: '2D Layouts & Space Planning',
         description: 'Accurate, customized layouts designed to make the best use of every space.',
+        image: '/services/2d-layouts-space-planning.jpg',
+        imageAlt: '2D layouts and space planning with floor plans, optimized flow, and tailored design',
         tagline: 'The Foundation of Perfect Interiors',
         highlight:
           'Starting interiors without proper planning leads to wasted budget, space, and time.',
@@ -98,6 +103,8 @@ export const servicePillars: ServicePillar[] = [
         description:
           'High-quality 3D visuals that show how your home or commercial space will look before work begins.',
         linkedServiceId: '3d-visualization',
+        image: '/services/3d-interior-exterior-renderings.jpg',
+        imageAlt: '3D interior and exterior renderings with photo-realistic quality for homes and outdoor spaces',
         tagline: 'Visualize Your Dream Space Before Construction Begins',
         highlight:
           "Don't rely on imagination or rough sketches. See your finished home in high definition before spending a single Rupee on materials.",
@@ -150,6 +157,8 @@ export const servicePillars: ServicePillar[] = [
         description:
           'A complete visual guide to wood, finishes, fabrication metals, fabrics, and colour combinations.',
         linkedServiceId: '3d-visualization',
+        image: '/services/material-selection-moodboards.jpg',
+        imageAlt: 'Material selection and moodboards with curated finishes, color palettes, and texture samples',
         tagline: 'Feel, Touch, and Coordinate Every Finish Before Execution',
         highlight:
           "A great design isn't just about how a space looks—it's about how every texture, grain, and finish works together in real life.",
@@ -215,6 +224,8 @@ export const servicePillars: ServicePillar[] = [
         description:
           'Waterproof aluminium and premium woodwork kitchens with precision hardware and smart storage.',
         linkedServiceId: 'wooden-work',
+        image: '/services/bespoke-modular-kitchens.jpg',
+        imageAlt: 'Bespoke modular kitchens in woodwork and aluminium with smart storage and premium finishes',
         tagline: 'Bespoke Woodwork, Modular Kitchens & Smart Lighting',
         highlight:
           'Aesthetics matter, but durability and functional design define true craftsmanship.',
@@ -256,6 +267,8 @@ export const servicePillars: ServicePillar[] = [
         description:
           'Floor-to-ceiling wardrobes, walk-in closets, and motion-sensor cabinet lighting.',
         linkedServiceId: 'wooden-work',
+        image: '/services/luxury-wardrobes-custom-closets.jpg',
+        imageAlt: 'Luxury wardrobes and custom closets with walk-in designs, smart storage, and premium finishes',
         tagline: 'Custom Storage Tailored to Your Space',
         intro:
           'From sliding floor-to-ceiling wardrobes to fully organized walk-in closets, we design storage that maximizes every inch while looking refined and effortless to use.',
@@ -272,6 +285,8 @@ export const servicePillars: ServicePillar[] = [
         description:
           'Gypsum ceilings, magnetic tracks, COB lighting, and architectural wall paneling.',
         linkedServiceId: 'wall-decor-finishes',
+        image: '/services/false-ceiling-architectural-lighting.jpg',
+        imageAlt: 'False ceiling and architectural lighting with cove lights, linear profiles, and custom designs',
         tagline: 'Ceilings, Lighting & Accent Features',
         intro:
           'We integrate ceilings, lighting, and wall features into one cohesive architectural language—so every room feels finished, layered, and intentional.',
@@ -288,6 +303,9 @@ export const servicePillars: ServicePillar[] = [
         description:
           'Wall modifications, space expansions, tiling, and surface laying managed end to end.',
         linkedServiceId: 'wall-decor-finishes',
+        image: '/services/turnkey-civil-modifications.jpg',
+        imageAlt:
+          'Turnkey civil modifications and renovations from planning and construction through finishing and handover',
         tagline: 'Civil Works Coordinated With Interiors',
         intro:
           'When layout changes or surface upgrades are needed, we coordinate civil work with the interior plan so finishes, services, and structure stay aligned.',
@@ -313,6 +331,9 @@ export const servicePillars: ServicePillar[] = [
         title: 'UPVC & Aluminium Doors & Windows',
         description: 'High-end sliding windows and sound-insulated glazing systems.',
         linkedServiceId: 'aluminium-windows',
+        image: '/services/upvc-aluminium-doors-windows.jpg',
+        imageAlt:
+          'UPVC and aluminium doors and windows including sliding, casement, tilt and turn, and French door styles',
         tagline: 'Noise control, energy efficiency, and weather-tight performance',
         offeringsTitle: 'Key Features',
         offeringsPoints: [
@@ -327,6 +348,9 @@ export const servicePillars: ServicePillar[] = [
         title: 'Foldable Mosquito Screens',
         description: 'Premium mosquito screens for sliding and custom-made doors and windows.',
         linkedServiceId: 'mosquito-doors',
+        image: '/services/foldable-mosquito-screens.jpg',
+        imageAlt:
+          'Foldable mosquito screens for balcony doors, windows, French doors, kitchens, and large openings',
         tagline: 'Concealed protection without blocking breeze or view',
         offeringsTitle: 'Key Features',
         offeringsPoints: [
@@ -342,6 +366,9 @@ export const servicePillars: ServicePillar[] = [
         description:
           'Sleek, modern honeycomb (plissé) collapsible systems that divide spaces intelligently.',
         linkedServiceId: 'glass-partitions',
+        image: '/services/foldable-honeycomb-partitions.jpg',
+        imageAlt:
+          'Foldable honeycomb partitions for living rooms, dining areas, offices, and commercial spaces',
         tagline: 'Divide open-plan spaces instantly',
         offeringsTitle: 'Key Features',
         offeringsPoints: [
@@ -357,6 +384,9 @@ export const servicePillars: ServicePillar[] = [
         description:
           'Toughened-glass solutions for shower cubicles, office cabins, balconies, and interior partitions.',
         linkedServiceId: 'glass-partitions',
+        image: '/services/architectural-glass-partitions.jpg',
+        imageAlt:
+          'Architectural glass partitions for offices, conference rooms, home offices, retail, and staircases',
         tagline: 'Light, privacy, and safety in one system',
         offeringsTitle: 'Key Features',
         offeringsPoints: [
@@ -372,6 +402,9 @@ export const servicePillars: ServicePillar[] = [
         description:
           'Premium mild-steel and stainless-steel railings with precision laser-cut designs.',
         linkedServiceId: 'glass-skylight',
+        image: '/services/premium-ms-ss-railings.jpg',
+        imageAlt:
+          'Premium MS and SS railings including glass, horizontal, cable, and designer styles',
         tagline: 'Laser-cut precision with lasting finishes',
         offeringsTitle: 'Key Features',
         offeringsPoints: [
@@ -415,31 +448,42 @@ export const servicePillars: ServicePillar[] = [
     title: 'Turnkey Relocation',
     shortTitle: 'Relocation',
     cardLabel: 'Turnkey Relocation',
-    blurb: 'From construction dust to keys in hand—clean, pack, move, and settle in without the chaos.',
+    blurb:
+      'From construction dust to keys in hand—we clean, pack, move, and settle you in with one accountable team across Zirakpur and the Chandigarh Tricity.',
     image: '/services/turnkey-relocation.jpg',
     imageAlt: 'Domestic Dial turnkey relocation with deep cleaning and professional packing and moving',
     items: [
       {
         id: 'turnkey-project-management',
         title: 'Turnkey Project Management',
-        description: 'Complete, hassle-free project management covering materials, labour, and execution.',
+        description:
+          'Complete, hassle-free project management covering materials, labour, timelines, and on-site execution—so every trade stays aligned.',
         tagline: 'One accountable partner from plan to handover',
+        highlight:
+          'One timeline. One point of contact. One team responsible for the finish you approved.',
         intro:
-          'We coordinate materials, labour, and site execution under a single timeline—so you are not managing separate vendors for every trade.',
+          'We coordinate materials, labour, and site execution under a single timeline—so you are not managing separate vendors for every trade. From kickoff to snag-free handover, progress stays visible and decisions stay clear.',
         offeringsTitle: 'What We Manage',
         offeringsPoints: [
           'End-to-end scheduling across carpentry, electricals, plumbing, civil, and finishing trades.',
           'Material coordination and quality checks against approved drawings and moodboards.',
           'Single-point communication so decisions stay clear and accountable through the build.',
+          'Site supervision with regular updates, milestone reviews, and snag-list closure before move-in.',
+        ],
+        whyTitle: 'Why Domestic Dial Project Management?',
+        whyPoints: [
+          'Fewer handoffs between vendors means fewer delays and fewer costly miscommunications.',
+          'Quality benchmarks stay tied to your approved design—not last-minute substitutions.',
+          'You get a clear path from construction completion to a livable, finished home.',
         ],
       },
       {
         id: 'seamless-relocation-handover',
         title: 'Seamless Relocation & Handover',
         description:
-          'Post-construction cleaning, asset packing, safe shifting, and direct key handover.',
+          'Post-construction cleaning, asset packing, safe shifting, and direct key handover—so your first day feels like home.',
         linkedServiceId: 'packers-movers',
-        tagline: 'Post-Construction Cleaning, Asset Packing & Direct Key Handover',
+        tagline: 'Post-construction cleaning, packing & direct key handover',
         highlight:
           'Forget the nightmare of dirty floors, construction dust, and relocation stress after your project is done.',
         intro:

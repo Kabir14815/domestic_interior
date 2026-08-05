@@ -83,6 +83,8 @@ export default function ServicePillarItemPage() {
   const { pillar, item } = match
   const title = `${item.title} | ${pillar.title} | ${SITE_NAME}`
   const description = `${item.description} Serving Zirakpur, Chandigarh, Mohali & Panchkula. Call 92550 45552.`
+  const heroImage = item.image ?? pillar.image
+  const heroAlt = item.imageAlt ?? pillar.imageAlt
 
   return (
     <main className="page-service">
@@ -90,7 +92,7 @@ export default function ServicePillarItemPage() {
         title={title}
         description={description}
         path={`/services/category/${pillar.id}/${item.id}`}
-        image={pillar.image}
+        image={heroImage}
         jsonLd={breadcrumbJsonLd([
           { name: 'Home', path: '/' },
           { name: 'Services', path: '/#services' },
@@ -121,11 +123,11 @@ export default function ServicePillarItemPage() {
             <p className="service-detail__lede">{item.description}</p>
           </header>
 
-          <figure className="service-detail__hero fade-up">
+          <figure className="service-detail__hero service-detail__hero--board fade-up">
             <img
               className="service-detail__hero-img"
-              src={pillar.image}
-              alt={pillar.imageAlt}
+              src={heroImage}
+              alt={heroAlt}
               width={1600}
               height={900}
               loading="eager"
