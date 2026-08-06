@@ -392,6 +392,13 @@ a {
   vertical-align: middle;
 }
 
+.service-detail__gallery--showcase .service-detail__gallery-img {
+  aspect-ratio: auto;
+  max-height: min(72vh, 720px);
+  object-fit: contain;
+  background: var(--color-bg-pure);
+}
+
 .service-detail__para {
   margin: 0 0 1.1em;
   font-size: 1rem;

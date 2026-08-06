@@ -6,6 +6,11 @@ export type ServicePillarStep = {
   bullets?: string[]
 }
 
+export type ServicePillarGalleryImage = {
+  src: string
+  alt: string
+}
+
 export type ServicePillarItem = {
   id: string
   title: string
@@ -14,6 +19,8 @@ export type ServicePillarItem = {
   /** Optional hero image for the item detail page */
   image?: string
   imageAlt?: string
+  /** Optional photo gallery on the item detail page */
+  galleryImages?: ServicePillarGalleryImage[]
   /** Optional long-form content shown on the item detail page */
   tagline?: string
   highlight?: string
@@ -348,9 +355,20 @@ export const servicePillars: ServicePillar[] = [
         title: 'Foldable Mosquito Screens',
         description: 'Premium mosquito screens for sliding and custom-made doors and windows.',
         linkedServiceId: 'mosquito-doors',
-        image: '/services/foldable-mosquito-screens.jpg',
-        imageAlt:
-          'Foldable mosquito screens for balcony doors, windows, French doors, kitchens, and large openings',
+        galleryImages: [
+          {
+            src: '/services/foldable-mosquito-screens/pleated-screen-patio.jpg',
+            alt: 'Pleated foldable mosquito screen on a patio double-door opening',
+          },
+          {
+            src: '/services/foldable-mosquito-screens/pleated-screen-balcony.jpg',
+            alt: 'Retractable pleated mosquito screen on a balcony doorway',
+          },
+          {
+            src: '/services/foldable-mosquito-screens/crystal-folding-door.jpg',
+            alt: 'Crystal folding door system for balconies, patios, and open spaces',
+          },
+        ],
         tagline: 'Concealed protection without blocking breeze or view',
         offeringsTitle: 'Key Features',
         offeringsPoints: [
@@ -366,9 +384,16 @@ export const servicePillars: ServicePillar[] = [
         description:
           'Sleek, modern honeycomb (plissé) collapsible systems that divide spaces intelligently.',
         linkedServiceId: 'glass-partitions',
-        image: '/services/foldable-honeycomb-partitions.jpg',
-        imageAlt:
-          'Foldable honeycomb partitions for living rooms, dining areas, offices, and commercial spaces',
+        galleryImages: [
+          {
+            src: '/services/foldable-honeycomb-partitions/motorized-skylight-blind.jpg',
+            alt: 'Motorized honeycomb skylight blind with remote control',
+          },
+          {
+            src: '/services/foldable-honeycomb-partitions/blue-room-divider.jpg',
+            alt: 'Blue foldable honeycomb partition used as a room divider',
+          },
+        ],
         tagline: 'Divide open-plan spaces instantly',
         offeringsTitle: 'Key Features',
         offeringsPoints: [
@@ -384,9 +409,16 @@ export const servicePillars: ServicePillar[] = [
         description:
           'Toughened-glass solutions for shower cubicles, office cabins, balconies, and interior partitions.',
         linkedServiceId: 'glass-partitions',
-        image: '/services/architectural-glass-partitions.jpg',
-        imageAlt:
-          'Architectural glass partitions for offices, conference rooms, home offices, retail, and staircases',
+        galleryImages: [
+          {
+            src: '/services/architectural-glass-partitions/gold-fluted-panels.jpg',
+            alt: 'Gold-framed fluted glass partition panels in a luxury living space',
+          },
+          {
+            src: '/services/architectural-glass-partitions/black-sliding-divider.jpg',
+            alt: 'Black-framed sliding glass partition dividing a hallway and living room',
+          },
+        ],
         tagline: 'Light, privacy, and safety in one system',
         offeringsTitle: 'Key Features',
         offeringsPoints: [
