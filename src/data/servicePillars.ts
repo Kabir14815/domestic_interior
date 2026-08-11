@@ -355,20 +355,9 @@ export const servicePillars: ServicePillar[] = [
         title: 'Foldable Mosquito Screens',
         description: 'Premium mosquito screens for sliding and custom-made doors and windows.',
         linkedServiceId: 'mosquito-doors',
-        galleryImages: [
-          {
-            src: '/services/foldable-mosquito-screens/pleated-screen-patio.jpg',
-            alt: 'Pleated foldable mosquito screen on a patio double-door opening',
-          },
-          {
-            src: '/services/foldable-mosquito-screens/pleated-screen-balcony.jpg',
-            alt: 'Retractable pleated mosquito screen on a balcony doorway',
-          },
-          {
-            src: '/services/foldable-mosquito-screens/crystal-folding-door.jpg',
-            alt: 'Crystal folding door system for balconies, patios, and open spaces',
-          },
-        ],
+        image: '/services/foldable-mosquito-screens.jpg',
+        imageAlt:
+          'Mosquito screen folding door for balconies, patios, cafés, and open spaces',
         tagline: 'Concealed protection without blocking breeze or view',
         offeringsTitle: 'Key Features',
         offeringsPoints: [
@@ -384,16 +373,9 @@ export const servicePillars: ServicePillar[] = [
         description:
           'Sleek, modern honeycomb (plissé) collapsible systems that divide spaces intelligently.',
         linkedServiceId: 'glass-partitions',
-        galleryImages: [
-          {
-            src: '/services/foldable-honeycomb-partitions/motorized-skylight-blind.jpg',
-            alt: 'Motorized honeycomb skylight blind with remote control',
-          },
-          {
-            src: '/services/foldable-honeycomb-partitions/blue-room-divider.jpg',
-            alt: 'Blue foldable honeycomb partition used as a room divider',
-          },
-        ],
+        image: '/services/foldable-honeycomb-partitions.jpg',
+        imageAlt:
+          'Honeycomb foldable screen partitions for balconies, patios, interiors, and modern spaces',
         tagline: 'Divide open-plan spaces instantly',
         offeringsTitle: 'Key Features',
         offeringsPoints: [
