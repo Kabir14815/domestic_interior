@@ -40,6 +40,6 @@ npm run build
 4. Four-step journey (Dream → Build → Protect → Move)
 5. Why Domestic Dial
 6. Client quotes, videos, Instagram, FAQs
-7. Contact / partners + floating WhatsApp
+7. Contact + floating WhatsApp
 
 Specialist services (9 cards) remain on the Our Work page.
