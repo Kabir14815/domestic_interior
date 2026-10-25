@@ -22,8 +22,8 @@ export default function TrustContact() {
         <div className="landing-contact__panel fade-up">
           <h2 className="landing-contact__title">Book a consultation</h2>
           <p className="landing-contact__desc">
-            Tell us about your home goals in Zirakpur, Chandigarh, Mohali, or Panchkula. We’ll map the right mix of
-            visualization, glazing, joinery, finishes, and move support—and reply with next steps.
+            Tell us about your home goals across North India. We’ll map the right mix of
+            visualization, glazing, joinery, finishes, and turnkey handover—and reply with next steps.
           </p>
 
           <div className="landing-contact__locations" aria-label="Office locations">
@@ -81,7 +81,7 @@ export default function TrustContact() {
             </div>
           </div>
           <p className="landing-footer__copy">
-            © {new Date().getFullYear()} Domestic Dial. All rights reserved.
+            © {new Date().getFullYear()} Domestic Dial Home Solutions LLP. All rights reserved.
           </p>
         </div>
       </footer>

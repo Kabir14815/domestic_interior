@@ -39,8 +39,8 @@ export default function Header() {
             <img src="/domestic-dial-mark.png" alt="" width={44} height={44} decoding="async" />
           </span>
           <span className="site-header__brand-text">
-            <span className="site-header__brand-name">Domestic Dial</span>
-            <span className="site-header__brand-tagline">Design to Relocation</span>
+            <span className="site-header__brand-name">Domestic Dial Home Solutions</span>
+            <span className="site-header__brand-tagline">Architectural Fenestration &amp; Home Solutions</span>
           </span>
         </Link>
 

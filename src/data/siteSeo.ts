@@ -3,10 +3,13 @@ import type { DomesticDialServiceId } from './domesticDialServices'
 /** Production origin — override with VITE_SITE_URL in Netlify env if different. */
 export const SITE_URL = (
   (typeof import.meta !== 'undefined' && import.meta.env?.VITE_SITE_URL) ||
-  'https://domesticdial.com'
+  'https://www.domesticdial.in'
 ).replace(/\/$/, '')
 
-export const SITE_NAME = 'Domestic Dial'
+export const SITE_NAME = 'Domestic Dial Home Solutions'
+export const SITE_LEGAL_NAME = 'Domestic Dial Home Solutions LLP'
+export const SITE_TAGLINE = 'Architectural Fenestration & Home Solutions'
+export const SITE_MOTTO = 'Your Trusted Partner for Quality Home Solutions'
 export const SITE_PHONE = '+919255045552'
 export const SITE_PHONE_DISPLAY = '92550 45552'
 export const SITE_WHATSAPP = '919255045552'
@@ -14,6 +17,7 @@ export const SITE_INSTAGRAM = 'https://www.instagram.com/domesticdial2021'
 export const SITE_LOCALE = 'en_IN'
 
 export const SERVICE_AREA = [
+  'North India',
   'Zirakpur',
   'Chandigarh',
   'Mohali',
@@ -26,7 +30,7 @@ export const SERVICE_AREA = [
 ] as const
 
 export const BUSINESS_ADDRESS = {
-  streetAddress: 'Office no. 17, Motia Guildford Square, Aerocity Rd',
+  streetAddress: 'Office No. 17, Motia Guildford Square, Aerocity Rd',
   addressLocality: 'Zirakpur',
   addressRegion: 'Punjab',
   postalCode: '140603',
@@ -34,11 +38,11 @@ export const BUSINESS_ADDRESS = {
 } as const
 
 export const HOME_SEO = {
-  title: 'Domestic Dial | Design to Relocation — Zirakpur & Chandigarh Tricity',
+  title: 'Domestic Dial Home Solutions | Design to Handover — North India',
   description:
-    'Premium turnkey solutions for luxury homes in Zirakpur & Chandigarh—design & visualization, interiors, engineered systems, shading, and relocation. Call 92550 45552.',
+    'Your trusted partner for quality home solutions across North India—architectural fenestration, design & visualization, interiors, engineered systems, shading, and turnkey handover. Call 92550 45552.',
   keywords:
-    'Domestic Dial Zirakpur, interior design Chandigarh, 3D visualization, aluminium windows, packers and movers, pergola shading, turnkey relocation Tricity',
+    'Domestic Dial Home Solutions, architectural fenestration, turnkey handover North India, interior design Zirakpur, aluminium windows Chandigarh, 3D visualization, pergola shading',
 }
 
 export type ServiceSeo = {
@@ -106,20 +110,20 @@ export const SERVICE_SEO: Record<DomesticDialServiceId, ServiceSeo> = {
       'wall decor Zirakpur, wall finishes Chandigarh, feature wall Mohali, WPC wall Panchkula',
   },
   'packers-movers': {
-    title: 'Packers and Movers in Zirakpur, Chandigarh & Mohali | Domestic Dial',
+    title: 'Turnkey Handover across North India | Domestic Dial Home Solutions',
     description:
-      'Trusted packers and movers in Zirakpur and Chandigarh Tricity. Concierge packing, white-glove transit, and careful handover. Call Domestic Dial 92550 45552.',
+      'Site audit, deep cleaning, and ready-to-move key handover for luxury homes across North India. Call Domestic Dial Home Solutions 92550 45552.',
     keywords:
-      'packers and movers Zirakpur, packers movers Chandigarh, home shifting Mohali, relocation Panchkula, packers and movers near me',
+      'turnkey handover North India, site audit Zirakpur, deep cleaning Chandigarh, key handover Mohali, Domestic Dial Home Solutions',
   },
 }
 
 export const OUR_WORK_SEO = {
-  title: 'Our Work | Interior Projects in Zirakpur & Chandigarh Tricity | Domestic Dial',
+  title: 'Our Work | Interior Projects across North India | Domestic Dial Home Solutions',
   description:
-    'See Domestic Dial projects across Zirakpur, Chandigarh, Mohali and Panchkula—visualization, windows, joinery, finishes, and move support.',
+    'See Domestic Dial Home Solutions projects across North India—visualization, windows, joinery, finishes, and turnkey handover.',
   keywords:
-    'Domestic Dial projects, interior design portfolio Chandigarh, home renovation Zirakpur',
+    'Domestic Dial Home Solutions projects, interior design portfolio North India, home renovation Zirakpur',
 }
 
 export function absoluteUrl(path: string): string {
@@ -133,7 +137,9 @@ export function localBusinessJsonLd() {
     '@type': 'HomeAndConstructionBusiness',
     '@id': `${SITE_URL}/#business`,
     name: SITE_NAME,
-    alternateName: 'Domestic Dial Zirakpur',
+    legalName: SITE_LEGAL_NAME,
+    alternateName: ['Domestic Dial', 'Domestic Dial Home Solutions LLP'],
+    slogan: SITE_MOTTO,
     url: SITE_URL,
     telephone: SITE_PHONE,
     image: absoluteUrl('/domestic-dial-logo.png'),

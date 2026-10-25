@@ -459,13 +459,13 @@ export const servicePillars: ServicePillar[] = [
   },
   {
     id: 'turnkey-relocation',
-    title: 'Turnkey Relocation',
-    shortTitle: 'Relocation',
-    cardLabel: 'Turnkey Relocation',
+    title: 'Turnkey Handover',
+    shortTitle: 'Handover',
+    cardLabel: 'Turnkey Handover',
     blurb:
-      'From construction dust to keys in hand—we clean, pack, move, and settle you in with one accountable team across Zirakpur and the Chandigarh Tricity.',
-    image: '/services/turnkey-relocation.jpg',
-    imageAlt: 'Domestic Dial turnkey relocation with deep cleaning and professional packing and moving',
+      'From construction dust to keys in hand—we inspect, deep clean, and deliver a ready-to-move home.',
+    image: '/services/turnkey-handover.jpg',
+    imageAlt: 'Domestic Dial turnkey handover with a clean, ready-to-move luxury interior',
     items: [
       {
         id: 'turnkey-project-management',
@@ -493,54 +493,45 @@ export const servicePillars: ServicePillar[] = [
       },
       {
         id: 'seamless-relocation-handover',
-        title: 'Seamless Relocation & Handover',
+        title: 'Site Audit & Handover',
         description:
-          'Post-construction cleaning, asset packing, safe shifting, and direct key handover—so your first day feels like home.',
-        linkedServiceId: 'packers-movers',
-        tagline: 'Post-construction cleaning, packing & direct key handover',
+          'Post-construction inspection, deep cleaning, and direct key handover—so your first day feels like home.',
+        tagline: 'Site audit, deep clean & ready-to-move key handover',
         highlight:
-          'Forget the nightmare of dirty floors, construction dust, and relocation stress after your project is done.',
+          'Forget the nightmare of dirty floors and construction dust after your project is done.',
         intro:
-          "At Domestic Dial, our relationship doesn't end when the civil work finishes. We handle post-construction deep cleaning, professional multi-layer packing, safe shifting, and zero-damage re-assembly—delivering a spotless, ready-to-move space right into your hands.",
-        processTitle: 'Step-by-Step Handover & Transition Process',
+          "At Domestic Dial, our relationship doesn't end when the civil work finishes. We handle site audit, post-construction deep cleaning, and a verified key handover—delivering a spotless, ready-to-move space right into your hands.",
+        processTitle: 'Step-by-Step Handover Process',
         steps: [
           {
-            title: '1. Post-Construction Deep Chemical Cleaning',
-            description: 'A full construction-to-clean reset before any belongings move in:',
+            title: '1. Site Audit & Quality Inspection',
+            description: 'A complete room-by-room check before cleaning begins:',
+            bullets: [
+              'Finish Verification: Inspect carpentry, glazing, lighting, tiling, and paint against the approved plan.',
+              'Snag List Closure: Capture and close remaining defects so handover is clean and accountable.',
+            ],
+          },
+          {
+            title: '2. Post-Construction Deep Chemical Cleaning',
+            description: 'A full construction-to-clean reset before move-in:',
             bullets: [
               'De-Dusting & De-Grime: Complete removal of paint splatter, grout marks, cement residue, and fine construction dust from windows, tiles, and cabinetry.',
               'Surface Polish & Treatment: High-grade chemical cleaning for sanitary fittings and diamond mirror polishing for marble and granite floors.',
             ],
           },
           {
-            title: '2. Premium Multi-Layer Asset Packing',
-            description: 'Professional packing that protects fragile and high-value items:',
-            bullets: [
-              'Cushion Protection: Multi-layer bubble wrapping, foam padding, and heavy-duty corrugated sheets for fragile electronics, glass items, and high-value furniture.',
-              'Organized Tagging: Systematically labeled boxes for room-by-room inventory tracking, ensuring zero misplaced belongings during shifting.',
-            ],
-          },
-          {
-            title: '3. Safe Transportation & Zero-Damage Re-Assembly',
-            description: 'Secure transit and careful setup at the destination:',
-            bullets: [
-              'Secure Transit: Covered transport vehicles to protect your assets against weather, road dust, and transit vibration.',
-              'Expert Re-Fitting: Professional unboxing, placement, and precision re-assembly of beds, wardrobes, and wall-mounted electronics at your new space.',
-            ],
-          },
-          {
-            title: '4. Final Inspection & Direct Key Handover',
+            title: '3. Final Walkthrough & Direct Key Handover',
             description: 'A verified, move-in-ready finish:',
             bullets: [
               'Joint Walkthrough: A complete room-by-room quality audit with you to verify every detail, light fixture, and finish meets your expectations.',
-              'Ready-To-Move Key Handover: Receiving your keys to a pristine, fully functional home or office space—ready for immediate living.',
+              'Ready-To-Move Key Handover: Receiving your keys to a pristine, fully functional home—ready for immediate living.',
             ],
           },
         ],
-        whyTitle: 'Why Domestic Dial Relocation & Handover?',
+        whyTitle: 'Why Domestic Dial Turnkey Handover?',
         whyPoints: [
-          "True Single-Window Convenience: You don't need to hire separate cleaning crews or third-party packers and movers.",
-          'Zero Stress & Damage Risk: Complete accountability from construction dust cleanup to your first night in the new home.',
+          'True Single-Window Convenience: Site audit, deep clean, and key handover under one accountable partner.',
+          'Zero Stress Handover: Complete accountability from construction dust cleanup to your first night in the new home.',
           '100% Move-In Ready: Step into a fully polished, clean, and organized space from day one.',
         ],
       },

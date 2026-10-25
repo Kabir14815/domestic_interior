@@ -65,7 +65,7 @@ export default function Seo({
     if (keywords) upsertMeta('name', 'keywords', keywords)
     upsertMeta('name', 'robots', noIndex ? 'noindex, nofollow' : 'index, follow, max-image-preview:large')
     upsertMeta('name', 'geo.region', 'IN-PB')
-    upsertMeta('name', 'geo.placename', 'Zirakpur, Chandigarh Tricity')
+    upsertMeta('name', 'geo.placename', 'North India')
     upsertMeta('name', 'geo.position', '30.6425;76.8173')
     upsertMeta('name', 'ICBM', '30.6425, 76.8173')
     upsertMeta('name', 'author', 'Domestic Dial')

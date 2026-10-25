@@ -19,10 +19,10 @@ export default function ServicePillars() {
     <section className="service-pillars service-pillars--landing" id="services" ref={revealRef}>
       <div className="container">
         <header className="service-pillars__intro fade-up">
-          <p className="service-pillars__brand">Domestic Dial</p>
-          <h1 className="service-pillars__heading">Design to relocation</h1>
+          <p className="service-pillars__brand">Domestic Dial Home Solutions</p>
+          <h1 className="service-pillars__heading">Design to Handover</h1>
           <p className="service-pillars__lead">
-            Five offerings for luxury homes across Zirakpur, Chandigarh, Mohali &amp; Panchkula.
+            Five offerings for luxury homes across North India.
           </p>
         </header>
 

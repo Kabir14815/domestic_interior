@@ -6,7 +6,7 @@ export default function ServicesShowcase() {
       id="service-list"
       eyebrow="Our specialist services"
       title="Everything your space needs—under one roof"
-      intro="Explore our individual services, delivered across Zirakpur, Chandigarh, Mohali, and Panchkula."
+      intro="Explore our individual services, delivered across North India."
     />
   )
 }

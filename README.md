@@ -1,6 +1,6 @@
 # Domestic Dial — Website
 
-React site for **Domestic Dial** (design to relocation home services across Zirakpur, Chandigarh, Mohali & Panchkula).
+React site for **Domestic Dial Home Solutions LLP** (Design to Handover — architectural fenestration & home solutions across North India).
 
 ## Stack
 

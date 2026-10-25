@@ -4,12 +4,10 @@ import {
   ArrowRight,
   ClipboardList,
   KeyRound,
-  Package,
   Phone,
   ShieldCheck,
   Sparkles,
   SprayCan,
-  Truck,
 } from 'lucide-react'
 import type { LucideIcon } from 'lucide-react'
 import { getServicePillar } from '../data/servicePillars'
@@ -19,29 +17,29 @@ import { breadcrumbJsonLd, SITE_NAME } from '../data/siteSeo'
 import { useScrollReveal } from '../hooks/useScrollReveal'
 
 const TURNKEY_JOURNEY = [
+  { label: 'Inspect', detail: 'Site audit & snag check', Icon: ClipboardList },
   { label: 'Clean', detail: 'Post-construction deep clean', Icon: SprayCan },
-  { label: 'Pack', detail: 'Multi-layer asset protection', Icon: Package },
-  { label: 'Move', detail: 'Safe transit & re-assembly', Icon: Truck },
+  { label: 'Polish', detail: 'Surfaces, fittings & floors', Icon: Sparkles },
   { label: 'Handover', detail: 'Keys to a move-in ready home', Icon: KeyRound },
 ] as const
 
 const TURNKEY_PROMISES = [
   {
     title: 'One accountable partner',
-    detail: 'Materials, labour, cleaning, and shifting—coordinated under a single timeline.',
+    detail: 'Materials, labour, site audit, and cleaning—coordinated under a single timeline.',
     Icon: ShieldCheck,
   },
   {
     title: 'Zero vendor chase',
-    detail: 'No juggling separate cleaners, packers, and movers after the build ends.',
+    detail: 'No juggling separate cleaners and finish crews after the build ends.',
     Icon: ClipboardList,
   },
   {
     title: 'Move-in ready',
-    detail: 'Walk into a polished home—keys in hand, dust gone, belongings settled.',
+    detail: 'Walk into a polished home—keys in hand, dust gone, snags closed.',
     Icon: KeyRound,
   },
-] as const
+]
 
 const ITEM_ICONS: Record<string, LucideIcon> = {
   'turnkey-project-management': ClipboardList,
@@ -58,8 +56,8 @@ export default function ServiceCategoryPage() {
   }
 
   const isTurnkey = pillar.id === 'turnkey-relocation'
-  const title = `${pillar.title} in Zirakpur & Chandigarh | ${SITE_NAME}`
-  const description = `${pillar.blurb} Serving Zirakpur, Chandigarh, Mohali & Panchkula. Call 92550 45552.`
+  const title = `${pillar.title} across North India | ${SITE_NAME}`
+  const description = `${pillar.blurb} Serving luxury homes across North India. Call 92550 45552.`
 
   return (
     <main className={`page-service${isTurnkey ? ' page-service--turnkey' : ''}`}>
@@ -95,11 +93,11 @@ export default function ServiceCategoryPage() {
           </nav>
 
           <header className={`service-detail__header fade-up${isTurnkey ? ' service-detail__header--turnkey' : ''}`}>
-            {isTurnkey ? <span className="category-detail__eyebrow">Design to relocation</span> : null}
+            {isTurnkey ? <span className="category-detail__eyebrow">Design to Handover</span> : null}
             <h1 className="service-detail__title">{pillar.title}</h1>
             <p className="service-detail__lede">{pillar.blurb}</p>
             {isTurnkey ? (
-              <p className="turnkey-promise-line">Clean. Pack. Move. Settle in—without the chaos.</p>
+              <p className="turnkey-promise-line">Inspect. Clean. Polish. Hand over the keys.</p>
             ) : null}
           </header>
 
@@ -118,7 +116,7 @@ export default function ServiceCategoryPage() {
 
           {isTurnkey ? (
             <>
-              <section className="turnkey-journey fade-up" aria-label="Relocation journey">
+              <section className="turnkey-journey fade-up" aria-label="Handover journey">
                 <div className="turnkey-journey__head">
                   <p className="turnkey-journey__label">Your handover journey</p>
                   <h2 className="turnkey-journey__title">From construction dust to keys in hand</h2>
@@ -237,7 +235,7 @@ export default function ServiceCategoryPage() {
               <div className="turnkey-close__actions">
                 <Link to="/#contact" className="btn-solid-gold service-detail__cta">
                   <Sparkles size={16} strokeWidth={2} aria-hidden />
-                  Plan my relocation
+                  Plan my handover
                 </Link>
                 <a href="tel:+919255045552" className="turnkey-close__phone">
                   <Phone size={16} strokeWidth={1.75} aria-hidden />

@@ -53,11 +53,10 @@ export default function HomePage() {
           </div>
           <div className="landing-about__inner fade-up">
             <span className="landing-about__eyebrow">About Domestic Dial</span>
-            <h2 className="landing-about__title">Design to relocation—one accountable partner</h2>
+            <h2 className="landing-about__title">Design to Handover — One Accountable Partner</h2>
             <p className="landing-about__text">
               From 2D layouts and 3D visualization through premium interiors, engineered glazing systems,
-              shading, and turnkey relocation—we coordinate every trade for luxury homes across Zirakpur,
-              Chandigarh, Mohali, and Panchkula.
+              shading, and turnkey handover—we coordinate every trade for luxury homes across North India.
             </p>
           </div>
         </div>

@@ -2,11 +2,10 @@ import {
   Compass,
   Bot,
   Shield,
-  Truck,
   Sparkles,
   Settings,
   KeyRound,
-  Plane,
+  ClipboardCheck,
 } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import { useScrollReveal } from '../hooks/useScrollReveal'
@@ -52,17 +51,17 @@ const phases = [
     href: '#contact',
   },
   {
-    id: 'move',
-    label: 'Move it',
-    icon: Truck,
-    headline: 'Handing over the keys to your new life.',
-    points: ['Concierge packing', 'White-glove transit', 'Global logistics'],
+    id: 'handover',
+    label: 'Hand it over',
+    icon: KeyRound,
+    headline: 'From construction dust to keys in hand.',
+    points: ['Site audit', 'Deep cleaning', 'Ready-to-move handover'],
     visual:
-      'https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800&q=85',
-    visualAlt: 'Professional move coordination',
-    cta: 'Plan your move',
-    ctaIcon: Plane,
-    href: '/services/packers-movers',
+      'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&q=85',
+    visualAlt: 'Clean luxury interior ready for handover',
+    cta: 'Plan your handover',
+    ctaIcon: ClipboardCheck,
+    href: '/services/category/turnkey-relocation',
   },
 ] as const
 

@@ -82,7 +82,7 @@ export default function ServicePillarItemPage() {
 
   const { pillar, item } = match
   const title = `${item.title} | ${pillar.title} | ${SITE_NAME}`
-  const description = `${item.description} Serving Zirakpur, Chandigarh, Mohali & Panchkula. Call 92550 45552.`
+  const description = `${item.description} Serving luxury homes across North India. Call 92550 45552.`
   const heroImage = item.image ?? (item.galleryImages?.length ? undefined : pillar.image)
   const heroAlt = item.imageAlt ?? (item.galleryImages?.length ? undefined : pillar.imageAlt)
   const seoImage = item.image ?? item.galleryImages?.[0]?.src ?? pillar.image

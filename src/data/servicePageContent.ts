@@ -219,23 +219,23 @@ export const servicePageContent: Record<DomesticDialServiceId, ServicePageConten
   'packers-movers': {
     id: 'packers-movers',
     heroImage: {
-      src: '/services/packers-movers.png',
-      alt: 'Professional packing and moving coordination for a home relocation',
+      src: '/services/turnkey-handover.jpg',
+      alt: 'Clean luxury interior ready for Domestic Dial turnkey handover',
     },
     galleryImages: [
       {
         src: img(P.modernHome, 1200),
-        alt: 'Move-ready home exterior prepared for handover and transit',
+        alt: 'Move-ready home exterior prepared for site audit and handover',
       },
       {
         src: img(P.livingSofa, 1200),
-        alt: 'Furnished living space staged for careful packing and relocation',
+        alt: 'Furnished living space polished and ready for key handover',
       },
     ],
     paragraphs: [
-      'From inventory to labelling across Zirakpur and the Chandigarh Tricity, our packing team protects furniture, art, and everyday essentials with materials matched to each item. Room-by-room plans keep unpacking predictable on the other side.',
-      'Transit is scheduled around your handover date with padded wrapping, secure loading, and tracked routes for local and intercity moves. Fragile and high-value pieces get dedicated handling so finishes and joinery arrive as they left.',
-      'On arrival in Chandigarh, Mohali, Panchkula, or beyond, we place cartons by zone, assemble priority furniture if needed, and clear debris so your new home feels ready—not chaotic. One partner from packing through keys keeps the move accountable.',
+      'Turnkey Handover starts with a room-by-room site audit across North India—checking carpentry, glazing, lighting, tiling, and paint against the approved plan so snags are closed before you receive the keys.',
+      'Our deep-cleaning team resets the home from construction dust to polished finishes: de-grime on tiles and cabinetry, chemical care for sanitary fittings, and careful treatment of marble and granite floors.',
+      'We close with a joint walkthrough and direct key handover, so you step into a pristine, fully functional home—ready for immediate living under one accountable partner.',
     ],
   },
 }
