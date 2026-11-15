@@ -114,6 +114,20 @@ export default function ServiceCategoryPage() {
             />
           </figure>
 
+          {pillar.video ? (
+            <figure className="service-detail__video fade-up">
+              <video
+                className="service-detail__video-el"
+                src={pillar.video}
+                poster={pillar.image}
+                controls
+                playsInline
+                preload="metadata"
+                aria-label={pillar.videoAlt ?? `${pillar.title} video`}
+              />
+            </figure>
+          ) : null}
+
           {isTurnkey ? (
             <>
               <section className="turnkey-journey fade-up" aria-label="Handover journey">

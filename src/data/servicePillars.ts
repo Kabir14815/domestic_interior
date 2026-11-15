@@ -42,6 +42,9 @@ export type ServicePillar = {
   externalUrl?: string
   image: string
   imageAlt: string
+  /** Optional video shown on the category detail page */
+  video?: string
+  videoAlt?: string
   items: ServicePillarItem[]
 }
 
@@ -465,7 +468,9 @@ export const servicePillars: ServicePillar[] = [
     blurb:
       'From construction dust to keys in hand—we inspect, deep clean, and deliver a ready-to-move home.',
     image: '/services/turnkey-handover.jpg',
-    imageAlt: 'Domestic Dial turnkey handover with a clean, ready-to-move luxury interior',
+    imageAlt: 'Domestic Dial key handover for a ready-to-move luxury home',
+    video: '/services/turnkey-handover.mp4',
+    videoAlt: 'Domestic Dial turnkey handover walkthrough',
     items: [
       {
         id: 'turnkey-project-management',

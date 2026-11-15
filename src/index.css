@@ -1873,7 +1873,27 @@ a {
   overflow: hidden;
   border-radius: 4px 4px 18px 18px;
   box-shadow: var(--shadow-premium);
-  margin-bottom: clamp(28px, 4.5vw, 44px);
+  margin-bottom: clamp(18px, 3vw, 28px);
+}
+
+.service-detail__video {
+  margin: 0 0 clamp(28px, 4.5vw, 44px);
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid rgba(166, 140, 91, 0.2);
+  background: #141210;
+  box-shadow: var(--shadow-card);
+}
+
+.service-detail__video-el {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: min(72vh, 640px);
+  aspect-ratio: 16 / 9;
+  object-fit: contain;
+  background: #141210;
+  vertical-align: middle;
 }
 
 .service-detail__hero--turnkey::after {
