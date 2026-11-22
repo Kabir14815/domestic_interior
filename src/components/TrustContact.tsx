@@ -11,6 +11,16 @@ const offices = [
     ],
     phones: [{ display: '92550 45552', tel: '+919255045552' }],
   },
+  {
+    id: 'gurugram',
+    label: 'Gurugram',
+    lines: [
+      'Contact: Swarn',
+      'Plot No. 209, E/16 D',
+      'Gurugram, Haryana 122001',
+    ],
+    phones: [{ display: '95559 88033', tel: '+919555988033' }],
+  },
 ] as const
 
 export default function TrustContact() {

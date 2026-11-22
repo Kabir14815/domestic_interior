@@ -19,6 +19,7 @@ export const SITE_LOCALE = 'en_IN'
 export const SERVICE_AREA = [
   'North India',
   'Zirakpur',
+  'Gurugram',
   'Chandigarh',
   'Mohali',
   'Panchkula',

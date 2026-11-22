@@ -13,7 +13,7 @@ export const homeFaqs = [
   },
   {
     q: 'Where are you based, and which areas do you serve?',
-    a: 'Our studio is in Zirakpur, Punjab (Office No. 17, Motia Guildford Square). We serve luxury homes across North India, with strong coverage in Chandigarh, Mohali, Panchkula, Kharar, Derabassi, and the wider Tricity.',
+    a: 'We have offices in Zirakpur, Punjab (Office No. 17, Motia Guildford Square) and Gurugram, Haryana (Plot No. 209, E/16 D). We serve luxury homes across North India, including Delhi NCR, Chandigarh, Mohali, Panchkula, Kharar, and Derabassi.',
   },
   {
     q: 'What is Turnkey Handover?',
